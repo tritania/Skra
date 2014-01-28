@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <head>    
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script src="js/drop.js"></script>
+        <script src="js/linechart.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body>
+
+    <div class="container">
+        <div class="menu">
+            
+           <div onclick="drop(1)" class="buttoncon" id="1">
+               <div class="buttontextcon">
+                    <p class="buttontext">Testing</p>
+               </div>
+               <div class="buttonimg"></div>
+           </div>
+           <div class="dropper" id="drop1"></div>
+           
+           <div onclick="drop(2)" class="buttoncon" id="2">
+               <div class="buttontextcon">
+                    <p class="buttontext">Testing2</p>
+               </div>
+               <div class="buttonimg"></div>
+           </div>
+           <div class="dropper" id="drop2"></div>
+           
+           <div onclick="drop(3)" class="buttoncon" id="3">
+               <div class="buttontextcon">
+                    <p class="buttontext">Testing3</p>
+               </div>
+               <div class="buttonimg"></div>
+           </div>
+            <div class="dropper" id="drop3"></div>
+           
+           <div onclick="drop(4)" class="buttoncon" id="4">
+               <div class="buttontextcon">
+                    <p class="buttontext">Testing4</p>
+               </div>
+               <div class="buttonimg"></div>
+           </div>
+           <div class="dropper" id="drop4"></div>
+           
+        </div>
+
+        <div class="chart">
+            <script>
+            drawlinegraph()
+            </script>
+        </div>
+    </div>
+
+    </body>
+</html>

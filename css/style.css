@@ -1,0 +1,114 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.container 
+{
+    height: 100%;
+    width: 100%;
+}
+
+.chart
+{
+	float:right;
+    background-color: #F3F3F3;
+
+}
+.menu
+{
+    position:absolute;
+    top:20px;
+	background-color: #F3F3F3;
+	float:left;
+	width: 23%;
+    height: 95%;
+}
+
+.dropper
+{
+    margin-bottom:20px;
+    float:right;
+}
+
+#drop1,
+#drop2,
+#drop3,
+#drop4
+{
+    float:right;
+    width: 95%;
+}
+
+
+.buttoncon
+{
+    height: 7.5%; 
+    width: 95%;
+    margin:auto;
+    float:right;
+   
+}
+
+    .buttonimg
+    {
+        height: 100%;
+        width: 20%;
+        background-color:red;
+        border-top-left-radius: 15px 15px;
+        border-bottom-left-radius: 15px 15px;
+        border:1px solid;
+    }
+    
+
+
+    .buttontextcon
+    {
+        height: 100%;
+        width: 80%;
+        float:right;
+        background-color: Silver;
+        border-top-right-radius: 15px 15px;
+        border-bottom-right-radius: 15px 15px;
+        border:1px solid;
+    }
+        .buttontext
+        {
+            margin:auto;
+            text-align:center;
+            vertical-align: middle;
+            font-family:arial;color:black;font-size:20px;
+            line-height:325%;
+        }
+	
+
+body 
+{
+  height: 100%;
+  width: 100%;
+  padding:0px;
+  margin:0px;
+  font: 10px sans-serif;
+  background-color: #F3F3F3;
+
+}
+
+.axis path,
+.axis line 
+{
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path 
+{
+  display: none;
+}
+
+.line 
+{
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
