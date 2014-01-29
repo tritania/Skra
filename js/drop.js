@@ -4,43 +4,11 @@ function drop(x)
                 var Id = In.concat(x);
                 var j = d3.select(Id).style("height");
                 var dur = 375;
-                d3.selectAll(".buttontextcon").transition().duration(0).style("border-bottom-right-radius", "15px 15px");
-                d3.selectAll(".buttonimg").transition().duration(0).style("border-bottom-left-radius", "15px 15px");
-                d3.selectAll(".dropper").style("box-shadow", "0px 0px 0px #888888");
-                switch(x)
-                {
-                    case 1:
-                        d3.select("#drop2").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop3").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop4").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop5").transition().duration(dur).style("height", "0px");
-                        break;
-                    case 2:
-                        d3.select("#drop1").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop3").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop4").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop5").transition().duration(dur).style("height", "0px");
-                        break;
-                    case 3:
-                        d3.select("#drop1").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop2").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop4").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop5").transition().duration(dur).style("height", "0px");
-                        break;
-                    case 4:
-                        d3.select("#drop1").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop2").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop3").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop5").transition().duration(dur).style("height", "0px");
-                        break;
-                    case 5:
-                        d3.select("#drop1").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop2").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop3").transition().duration(dur).style("height", "0px");
-                        d3.select("#drop4").transition().duration(dur).style("height", "0px");
-                        break;
-                }
-
+                d3.selectAll(".buttontextcon").style("border-bottom-right-radius", "15px 15px");
+                d3.selectAll(".buttonimg").style("border-bottom-left-radius", "15px 15px");
+                d3.selectAll(".dropper")
+                    .style("box-shadow", "0px 0px 0px #888888")
+                    .transition().duration(dur).style("height", "0px");
                 
                
                 if (j == "300px")
