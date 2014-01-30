@@ -26,10 +26,9 @@ function drop(x)
                     d3.select(Id)
                         .transition()
                         .duration(dur)
-                        .style("height","300px")
-                        .style("background-color","#D1D1D1")
                         .style("border","1px solid")
-                        .style("box-shadow", "10px 10px 5px #888888");
+                        .style("box-shadow", "10px 10px 5px #888888")
+                        .style("height","300px");
                     var cornerId = "#t".concat(x);
                     var cornerId2 = "#i".concat(x);
                     d3.select(cornerId).transition().duration(dur).style("border-bottom-right-radius", "0px 0px");

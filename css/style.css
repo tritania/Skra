@@ -37,6 +37,7 @@ html {
 {
 	float:right;
     background-color: #F3F3F3;
+    margin-top:35px;
 }
 .menu
 {
@@ -52,7 +53,6 @@ html {
 .dropper,
 .buttoncon
 {
-    width:300px;
     margin-left:10px;
     position:relative;
 }
@@ -65,12 +65,15 @@ html {
     border-bottom-left-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
     height:0%;
+    width:298px;
+    background-color:#D1D1D1;
 }
 
 
 .buttoncon
 {
     height: 60px; 
+    width:300px;
     box-shadow: 10px 12px 5px #888888;
     border-bottom-left-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
