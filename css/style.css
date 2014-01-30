@@ -7,31 +7,53 @@ html {
 {
     height: 100%;
     width: 100%;
+    position:relative;
+}
+
+.logincover
+{
+
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color:black;
+    opacity:0.6;
+    position:absolute;
+    bottom:0;
+}
+
+.uppermenu
+{
+    background-color:silver;
+    height:30px;
+    width:100%;
+    position:absolute;
+    border-width:1px;	
+    border-bottom-style:solid;
+    z-index:3;
 }
 
 .chart
 {
 	float:right;
     background-color: #F3F3F3;
-
 }
 .menu
 {
     position:absolute;
-    top:20px;
+    top:50px;
 	background-color: #F3F3F3;
 	float:left;
-	width: 23%;
-    height: 95%;
+	width: 310px;
     display: inline;
+    bottom:0;
 }
 
 .dropper,
 .buttoncon
 {
-    width:95%;
-    margin-left:2.5%;
-    margin-right:2.5%;
+    width:300px;
+    margin-left:10px;
     position:relative;
 }
 
@@ -48,7 +70,7 @@ html {
 
 .buttoncon
 {
-    height: 7.5%; 
+    height: 60px; 
     box-shadow: 10px 12px 5px #888888;
     border-bottom-left-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
@@ -58,8 +80,8 @@ html {
 
     .buttonimg
     {
-        height: 100%;
-        width: 19%;
+        height: 60px;
+        width: 60px;
         background-color:red;
         border:1px solid;
         border-top-left-radius: 15px 15px;
@@ -70,8 +92,8 @@ html {
 
     .buttontextcon
     {
-        height: 100%;
-        width: 80%;
+        height: 60px;
+        width: 240px;
         float:right;
         background-color: Silver;
         border:1px solid;
@@ -119,3 +141,28 @@ body
   stroke: steelblue;
   stroke-width: 1.5px;
 }
+
+#logbtn
+{
+    border:1px solid;
+    width:60px;
+    height: 25px;
+    margin-top:2px;
+    float:right;
+    background-color:lightgrey;
+    margin-right:20px;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    
+}
+
+    #lgntext
+    {
+        margin-top:5px;
+        margin-bottom:5px;
+        font-family:arial;color:black;font-size:15px;
+        text-align:center;
+        text-align:middle;
+    }

@@ -3,13 +3,20 @@
     <head>    
         <script src="http://d3js.org/d3.v3.js"></script>
         <script src="js/drop.js"></script>
+        <script src="js/login.js"></script>
         <script src="js/linechart.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
     <body>
-
+    
     <div class="container">
+        <div class="uppermenu">
+            <div id="logbtn" onclick="login()">
+                <p id="lgntext">login</p>
+            </div>
+        </div>
+        <div class="logincover"></div>
         <div class="menu">
             
            <div onclick="drop(1)" class="buttoncon" id="1">
