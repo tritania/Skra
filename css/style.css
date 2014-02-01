@@ -169,3 +169,32 @@ body
         text-align:center;
         text-align:middle;
     }
+    
+.inputbox
+{
+    -moz-border-radius-topright: 30px;
+    -webkit-border-top-right-radius: 30px;
+    border-top-right-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    float:right;
+    border: 1px solid #848484;
+    outline:0; 
+    height:23px; 
+    width: 100px; 
+    padding-right:15px; 
+    padding-left:15px; 
+    margin-top:1px;
+    margin-right: 20px;
+  } 
+  
+.logtext
+{
+    margin-top:7.5px;
+    margin-bottom:7.5px;
+    font-family:arial;color:black;font-size:15px;
+    float: right;
+    margin-right; 20px;
+}
+
