@@ -27,7 +27,7 @@
 			</form>
         </div>
         <div class="registerdrop">
-		<p>Please fill out the following information to regiter</p><br>
+		<p class="alertmsg">Please fill out the following information to regiter</p><br>
         Username:        <input id="R1" type="text" name="Username"><br>
         <br>
         Password:        <input id="R2" type="password" name="password"><br>
@@ -38,9 +38,13 @@
         <br>
         Name:            <input id="R5" type="text" name="name"><br>
         <br>
-        BMI:             <input id="R6" type="text" name="bmi"><br>
+        Weight(kg):      <input id="R6" type="text" name="weight"><br>
         <br>
-		<div id="logbtn" onclick="login()">
+        Height(cm):      <input id="R7" type="text" name="height"><br>
+        <br>
+        Age:             <input id="R8" type="text" name="age"><br>
+        <br>
+		<div id="logbtn" onclick="registeruser()">
 			<p id="lgntext">Register!</p>
 		</div>
 		<div id="logbtn" onclick="registerclose()">

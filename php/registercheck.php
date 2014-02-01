@@ -1,6 +1,6 @@
 <?php
-$password = $_GET['password'];
 $username = $_GET['username'];
+$con=mysqli_connect("127.0.0.1","SKRA","PASSWORD","LOGINDATA");
 $mysqli = new mysqli("localhost", "SKRA", "PASSWORD", "LOGINDATA");
 
 if ($mysqli->connect_errno) {
@@ -8,19 +8,21 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-if ($result = $mysqli->query("SELECT PASSWORD FROM LOGIN WHERE USERNAME ='" . $username ."'")) 
+if ($result = $mysqli->query("SELECT USERNAME FROM LOGIN WHERE USERNAME ='" . $username ."'")) 
 {
     $row = mysqli_fetch_row($result);
-    if (password_verify($password, $row[0])) 
+    if ($row[0] == $username)
     {
-		echo '1'; //valid
-	} 
+		echo "0"; //need a new user
+	}
+	
 	else 
 	{
-		echo '2'; //invalid
+		echo "1"; //good to add to the database
 	}
 
     $result->close();
 }
 $mysqli->close();
+
 ?>
