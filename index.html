@@ -12,13 +12,18 @@
     
     <div class="container">
         <div class="uppermenu">
-            <div id="logbtn" onclick="login()">
-                <p id="lgntext">login</p>
-            </div>
-            <input class="inputbox" type="password">
-            <p class="logtext">Password:</p>
-            <input class="inputbox" type="text">
-            <p class="logtext">Username:</p>
+			<form>
+				<div id="regbtn" onclick="login()">
+					<p id="regtext">register</p>
+				</div>
+				<div id="logbtn" onclick="login()">
+					<p id="lgntext">login</p>
+				</div>
+				<input id="password" class="inputbox" type="password">
+				<p class="logtext">Password:</p>
+				<input id="username" class="inputbox" type="text">
+				<p class="logtext">Username:</p>
+			</form>
         </div>
         <div class="logincover"></div>
         <div class="menu">
@@ -57,11 +62,19 @@
            
             <div onclick="drop(5)" class="buttoncon" id="5">
                <div class="buttontextcon" id="t5">
-                    <p class="buttontext">Change Graph</p>
+                    <p class="buttontext">Add Injection</p>
                </div>
                <div class="buttonimg" id="i5"></div>
            </div>
            <div class="dropper" id="drop5"></div>
+           
+            <div onclick="drop(6)" class="buttoncon" id="6">
+               <div class="buttontextcon" id="t6">
+                    <p class="buttontext">Change Graph</p>
+               </div>
+               <div class="buttonimg" id="i6"></div>
+           </div>
+           <div class="dropper" id="drop6"></div>
            
         </div>
 
