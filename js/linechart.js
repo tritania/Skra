@@ -2,7 +2,7 @@ function drawlinegraph()
 {
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
         width = (screen.availWidth*0.78) - margin.left - margin.right,
-        height = window.innerHeight - margin.top - margin.bottom - 60;
+        height = window.innerHeight - margin.top - margin.bottom - 100;
 
     var parseDate = d3.time.format("%d-%b-%y").parse;
 

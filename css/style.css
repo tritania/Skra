@@ -223,3 +223,23 @@ body
     
 }
 
+.registerdrop
+{
+	margin: auto;
+	 top: 0; left: 0; bottom: 0; right: 0;
+	float:right;
+	position:absolute;
+	width:500px;
+	height:325px;
+	background-color:#B8B8B1;
+	z-index: 5;
+	margin-top:50px;
+	border-bottom-left-radius: 15px 15px;
+    border-bottom-right-radius: 15px 15px;
+    border-top-right-radius: 15px 15px;
+    border-top-left-radius: 15px 15px;
+    border:2px solid #a1a1a1;
+    visibility:hidden;
+    font-family:arial;color:black;font-size:15px;
+}
+

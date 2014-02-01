@@ -5,6 +5,7 @@
         <script src="js/drop.js"></script>
         <script src="js/login.js"></script>
         <script src="js/linechart.js"></script>
+        <script src="js/register.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
@@ -13,7 +14,7 @@
     <div class="container">
         <div class="uppermenu">
 			<form>
-				<div id="regbtn" onclick="login()">
+				<div id="regbtn" onclick="register()">
 					<p id="regtext">register</p>
 				</div>
 				<div id="logbtn" onclick="login()">
@@ -24,6 +25,27 @@
 				<input id="username" class="inputbox" type="text">
 				<p class="logtext">Username:</p>
 			</form>
+        </div>
+        <div class="registerdrop">
+		<p>Please fill out the following information to regiter</p><br>
+        Username:        <input id="R1" type="text" name="Username"><br>
+        <br>
+        Password:        <input id="R2" type="password" name="password"><br>
+        <br>
+        Confirm Password:<input id="R3" type="password" name="confirmpassword"><br>
+        <br>
+        Email Address:   <input id="R4" type="text" name="email"><br>
+        <br>
+        Name:            <input id="R5" type="text" name="name"><br>
+        <br>
+        BMI:             <input id="R6" type="text" name="bmi"><br>
+        <br>
+		<div id="logbtn" onclick="login()">
+			<p id="lgntext">Register!</p>
+		</div>
+		<div id="logbtn" onclick="registerclose()">
+			<p id="lgntext">Cancel</p>
+		</div>
         </div>
         <div class="logincover"></div>
         <div class="menu">
