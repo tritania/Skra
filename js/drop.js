@@ -13,6 +13,7 @@ function drop(x)
                
                 if (j == "300px")
                 {
+					d3.selectAll(".destroyme").remove();
                     d3.select(Id).transition().duration(dur)
                         .style("height", "0px");
                     d3.selectAll(".buttontextcon").transition().duration(900).style("border-bottom-right-radius", "15px 15px");
@@ -33,6 +34,47 @@ function drop(x)
                     var cornerId2 = "#i".concat(x);
                     d3.select(cornerId).transition().duration(dur).style("border-bottom-right-radius", "0px 0px");
                     d3.select(cornerId2).transition().duration(dur).style("border-bottom-left-radius", "0px 0px");
+                    d3.selectAll(".destroyme").remove();
+                    addelem(Id);
                 }
                 
             }
+function addelem(ele)
+{ //needs to be a switch
+	var j = d3.select(ele).style("height");
+	if (j == "300px")
+	{}
+	else 
+	{
+		switch(ele)
+		{
+			case "#drop1":
+			{
+				d3.select(ele).append("p").text("Please add a bloodsugar value below")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				break;
+			}
+			case "#drop2":
+			{
+				break;
+			}
+			case "#drop3":
+			{
+				break;
+			}
+			case "#drop4":
+			{
+				break;
+			}
+			case "#drop5":
+			{
+				break;
+			}
+			case "#drop6":
+			{
+				break;
+			}
+		}
+	}
+}

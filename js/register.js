@@ -52,12 +52,11 @@ function registeruser()
 					{
 					  if (xxmlhttp.readyState==4 && xxmlhttp.status==200)
 					  {
-						document.getElementById("logbtn").innerHTML=xxmlhttp.responseText;
+						
 					  }
 					}
 					xxmlhttp.open("GET","php/register.php?username="+user+"&password="+pass+"&email="+email+"&name="+name+"&weight="+weight+"&height="+weight+"&age="+age,true);
 					xxmlhttp.send();
-										//insert data here
 				}
 		   }
 		}
@@ -65,7 +64,7 @@ function registeruser()
 		xmlhttp.send();
 	
 	//database calls here
-	d3.select(".registerdrop").style("visibility", "visible");
+	d3.select(".registerdrop").style("visibility", "hidden");
 	d3.select(".logincover").transition().duration(600).style("height","0px");
 	}
 }

@@ -12,11 +12,38 @@ function login()
 	{
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
-		document.getElementById("logbtn").innerHTML=xmlhttp.responseText;
+		var res=xmlhttp.responseText;
+			if (res == 1)
+			{
+				document.cookie='username';
+				clearlogin();
+			}
+			else 
+			{
+				alert("Invalid Username or Password");
+			}
 		}
 	}
 	xmlhttp.open("GET","php/login.php?username="+user+"&password="+pass,true);
 	xmlhttp.send();
     
     d3.select(".logincover").transition().duration(600).style("height","0px");
+}
+
+function clearlogin()
+{
+	d3.selectAll(".logtext").remove();
+	d3.selectAll(".inputbox").remove();
+	d3.selectAll("#logbtn").remove();
+	d3.selectAll("#regtext")
+		.html("Logout");
+	d3.select("#regbtn")
+		.attr('onclick', null)
+		.attr("onlcick","logout()");
+	d3.select(".uppermenu").append("p")
+		.style("margin-top","7.5px")
+		.style("margin-bottom","7.5px")
+		.style("margin-left","10px")
+		.text("Welcome to Skra!");
+
 }

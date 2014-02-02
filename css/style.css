@@ -67,6 +67,7 @@ html {
     height:0%;
     width:298px;
     background-color:#D1D1D1;
+    font-family:arial;color:black;font-size:15px;
 }
 
 
@@ -89,8 +90,21 @@ html {
         border:1px solid;
         border-top-left-radius: 15px 15px;
         border-bottom-left-radius: 15px 15px;
+        position:relative;
+		background-repeat:no-repeat;
+		background-size: 60px 60px;
+		background-position:center;
     }
     
+    #i1
+    {
+		background-image:url(/img/bldsgr.png);
+    }
+    
+    #i5
+    {
+		background-image:url(/img/injection.png);
+    }
 
 
     .buttontextcon
@@ -120,7 +134,7 @@ body
   width: 100%;
   padding:0px;
   margin:0px;
-  font: 10px sans-serif;
+  font-family:arial;color:black;font-size:15px;
   background-color: #F3F3F3;
 
 }
@@ -145,7 +159,8 @@ body
   stroke-width: 1.5px;
 }
 
-#logbtn
+#logbtn,
+#logbtn2
 {
     border:1px solid;
     width:60px;
@@ -161,7 +176,8 @@ body
     
 }
 
-    #lgntext
+    #lgntext,
+    #lgntext2
     {
         margin-top:5px;
         margin-bottom:5px;
@@ -207,7 +223,8 @@ body
 	text-align:middle;
 }
 
-#regbtn
+#regbtn,
+#regbtn2
 {
     border:1px solid;
     width:60px;
@@ -242,4 +259,11 @@ body
     visibility:hidden;
     font-family:arial;color:black;font-size:15px;
 }
+
+.icons
+{
+	height:100%;
+	width:100%;
+}
+
 
