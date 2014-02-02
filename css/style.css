@@ -42,12 +42,13 @@ html {
 .menu
 {
     position:absolute;
-    top:50px;
+    top: 30px;
 	background-color: #F3F3F3;
 	float:left;
-	width: 310px;
+	width: 340px;
     display: inline;
     bottom:0;
+    overflow-y: scroll;
 }
 
 .dropper,
@@ -81,6 +82,7 @@ html {
     border-bottom-right-radius: 15px 15px;
     border-top-right-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
+    margin-top:15px;
 }
 
     .buttonimg
@@ -111,7 +113,10 @@ html {
     {
 		background-image:url(/img/exc.png);
     }
-    
+    #i8
+    {
+		background-image:url(/img/gear.png);
+    }
     #i5
     {
 		background-image:url(/img/injection.png);
@@ -124,6 +129,12 @@ html {
     {
 		background-image:url(/img/graph.png);
     }
+    #i7
+    {
+		background-image:url(/img/calc.png);
+    }
+    
+
     
 
 
@@ -301,4 +312,28 @@ body
 	width:100%;
 }
 
+.arc path {
+  stroke: #fff;
+}
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:#3F3F3D; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background:#3F3F3D; 
+}

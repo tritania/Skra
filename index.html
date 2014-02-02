@@ -4,7 +4,7 @@
         <script src="http://d3js.org/d3.v3.js"></script>
         <script src="js/drop.js"></script>
         <script src="js/login.js"></script>
-        <script src="js/linechart.js"></script>
+        <script src="js/drawgraph.js"></script>
         <script src="js/logout.js"></script>
         <script src="js/register.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -53,7 +53,7 @@
 		</div>
         </div>
         <div class="logincover"></div>
-        <div class="menu">
+        <div class="menu" id="menu">
             
            <div onclick="drop(1)" class="buttoncon" id="1">
                <div class="buttontextcon" id="t1">
@@ -103,11 +103,27 @@
            </div>
            <div class="dropper" id="drop6"></div>
            
+           <div onclick="drop(7)" class="buttoncon" id="7">
+               <div class="buttontextcon" id="t7">
+                    <p class="buttontext">Calculate Dosage</p>
+               </div>
+               <div class="buttonimg" id="i7"></div>
+           </div>
+           <div class="dropper" id="drop7"></div>
+           
+          <div onclick="drop(8)" class="buttoncon" id="8">
+               <div class="buttontextcon" id="t8">
+                    <p class="buttontext">Settings</p>
+               </div>
+               <div class="buttonimg" id="i8"></div>
+           </div>
+           <div class="dropper" id="drop8"></div>
+           
         </div>
 
         <div class="chart">
             <script>
-            drawlinegraph()
+            drawgraph(1)
             </script>
         </div>
     </div>
