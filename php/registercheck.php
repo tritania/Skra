@@ -1,6 +1,5 @@
 <?php
 $username = $_GET['username'];
-$con=mysqli_connect("127.0.0.1","SKRA","PASSWORD","LOGINDATA");
 $mysqli = new mysqli("localhost", "SKRA", "PASSWORD", "LOGINDATA");
 
 if ($mysqli->connect_errno) {
@@ -20,7 +19,7 @@ if ($result = $mysqli->query("SELECT USERNAME FROM LOGIN WHERE USERNAME ='" . $u
 	{
 		echo "1"; //good to add to the database
 	}
-
+	echo "FUCK THIS SHIT";
     $result->close();
 }
 $mysqli->close();

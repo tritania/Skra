@@ -68,6 +68,7 @@ html {
     width:298px;
     background-color:#D1D1D1;
     font-family:arial;color:black;font-size:15px;
+    text-align:center
 }
 
 
@@ -101,10 +102,29 @@ html {
 		background-image:url(/img/bldsgr.png);
     }
     
+    #i2
+    {
+		background-image:url(/img/meal.png);
+    }
+    
+    #i4
+    {
+		background-image:url(/img/exc.png);
+    }
+    
     #i5
     {
 		background-image:url(/img/injection.png);
     }
+    #i3
+    {
+		background-image:url(/img/insulin.png);
+    }
+    #i6
+    {
+		background-image:url(/img/graph.png);
+    }
+    
 
 
     .buttontextcon
@@ -238,6 +258,21 @@ body
     border-top-right-radius: 5px 5px;
     border-top-left-radius: 5px 5px;
     
+}
+
+#dropbutton
+{
+	border:1px solid;
+    width:60px;
+    height: 25px;
+    margin-top:5px;
+    background-color:lightgrey;
+    margin-left:auto;
+    margin-right:auto;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
 }
 
 .registerdrop

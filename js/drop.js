@@ -53,26 +53,141 @@ function addelem(ele)
 				d3.select(ele).append("p").text("Please add a bloodsugar value below")
 					.attr("class","destroyme")
 					.style("text-align","center");
+				d3.select(ele).append("input").text("Blood glucose value")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("p").text("What time did you take it (blank for now)")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input").attr("type","datetime-local")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 			case "#drop2":
 			{
+				d3.select(ele).append("p").text("Please enter the amount of carbs below")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input").text("Carbs:")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("p").text("Amount of insulin taken")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input").text("Carbs:")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("p").text("What time did eat (blank for now)")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input").attr("type","datetime-local")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 			case "#drop3":
 			{
+				d3.select(ele).append("p").text("amount of insulin for 20g of carbs")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 			case "#drop4":
 			{
+				d3.select(ele).append("p").text("amount of time you exercised")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("p").text("Type of exercise")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("select")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto")
+					.attr("class","destroyme");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 			case "#drop5":
 			{
+				d3.select(ele).append("p").text("amount of insulin taken")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("input")
+					.attr("class","destroyme")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto");
+				d3.select(ele).append("p").text("Select an injection site")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("select")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto")
+					.attr("class","destroyme");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 			case "#drop6":
 			{
+				d3.select(ele).append("p").text("What graph do you want to see?")
+					.attr("class","destroyme")
+					.style("text-align","center");
+				d3.select(ele).append("select")
+					.style("width","60%")
+					.style("margin-left","auto")
+					.style("margin-right","auto")
+					.attr("class","destroyme");
+				d3.select(ele).append("br");
+				d3.select(ele).append("br");
+				d3.select(ele).append("div").text("Submit")
+					.attr("class","destroyme")
+					.attr("id","dropbutton");
 				break;
 			}
 		}
