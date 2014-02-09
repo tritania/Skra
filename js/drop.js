@@ -70,7 +70,8 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
+					.attr("onclick","utility(1)");
 				break;
 			}
 			case "#drop2":
@@ -103,7 +104,8 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
+					.attr("onclick","utility(2)");
 				break;
 			}
 			case "#drop3":
@@ -120,7 +122,8 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
+					.attr("onclick","utility(3)");
 				break;
 			}
 			case "#drop4":
@@ -145,7 +148,8 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
+					.attr("onclick","utility(4)");
 				break;
 			}
 			case "#drop5":
@@ -170,7 +174,8 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
+					.attr("onclick","utility(5)");
 				break;
 			}
 			case "#drop6":
@@ -188,6 +193,7 @@ function addelem(ele)
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton");
+					.attr("onclick","utility(6)");
 				break;
 			}
 		}

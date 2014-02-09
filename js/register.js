@@ -28,7 +28,7 @@ function registeruser()
 		{
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		  {
-			  document.getElementById("#tester3").innerHTML=xmlhttp.responseText;
+			  var value = xmlhttp.responseText;
 		  }
 		}
 		xmlhttp.open("GET","php/registercheck.php?username="+user,true);
