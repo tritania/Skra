@@ -69,7 +69,7 @@ function drawlinegraph()
           .call(yAxis)
         .append("text")
           .attr("transform", "rotate(-90)")
-          .attr("y", 6)
+          .attr("y", -14)
           .attr("dy", ".85em")
           .style("text-anchor", "end")
           .text("Blood Sugar");
