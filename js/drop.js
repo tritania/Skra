@@ -192,7 +192,7 @@ function addelem(ele)
 				d3.select(ele).append("br");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
-					.attr("id","dropbutton");
+					.attr("id","dropbutton")
 					.attr("onclick","utility(6)");
 				break;
 			}
