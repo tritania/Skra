@@ -18,41 +18,62 @@ function registeruser()
 	var weight   = document.getElementById("R6").value;
 	var height   = document.getElementById("R7").value;
 	var age      = document.getElementById("R8").value;
-	var newuser;
+    user = user.toUpperCase();
 	
-	
-	var xmlhttp;
-		if (window.XMLHttpRequest) {
-		 xmlhttp=new XMLHttpRequest(); }
-		xmlhttp.onreadystatechange=function()
-		{
-		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		  {
-			  var value = xmlhttp.responseText;
-		  }
-		}
-		xmlhttp.open("GET","php/registercheck.php?username="+user,true);
-		xmlhttp.send();
-		
-
-	if (pass != confpass)
-		error("enter matching password again")
-	else if (user | pass | confpass | email | name | weight | height | age == "")
+    if (pass != confpass)
+    {
+		error("enter matching passwords")
+    }
+    
+    else if (!user | !pass | !confpass | !email | !name | !weight | !height | !age)
 	{
-		error("fill all of the forms please!")
+        error("fill all of the forms please!")
 	}
-	else if(newuser = 1)
-	{ 
-		//inser into databse
-
-	d3.select(".registerdrop").style("visibility", "hidden");
-	d3.select(".logincover").transition().duration(600).style("height","0px");
-	clearlogin();
-	}
-	else 
-	{
-		error("enter a new password");
-	}
+    
+    else 
+    {
+        var xmlhttp;
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp=new XMLHttpRequest(); 
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+              if(xmlhttp.responseText == 1)
+              {
+                  inputdata();
+              }
+              else 
+              {
+                  error("Please select a different username!");
+              }
+          }
+        }
+        xmlhttp.open("GET","php/registercheck.php?username="+user,true);
+        xmlhttp.send();
+        
+        function inputdata()
+        {
+            if (window.XMLHttpRequest) 
+            {
+                xmlhttp=new XMLHttpRequest(); 
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                }
+            }
+            xmlhttp.open("GET","php/register.php?username="+user+"&password="+pass+"&email="+email+"&name="+name+"&weight="+weight+"&height="+weight+"&age="+age,true);
+            xmlhttp.send();
+            
+            d3.select(".registerdrop").style("visibility", "hidden");
+            d3.select(".logincover").transition().duration(600).style("height","0px");
+            clearlogin();
+        }
+    }
 }
 
 function error(errormessage)
@@ -61,3 +82,5 @@ function error(errormessage)
 	d3.select(".alertmsg").style("color","red");
 	
 }
+
+

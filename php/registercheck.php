@@ -19,7 +19,6 @@ if ($result = $mysqli->query("SELECT USERNAME FROM LOGIN WHERE USERNAME ='" . $u
 	{
 		echo "1"; //good to add to the database
 	}
-	echo "FUCK THIS SHIT";
     $result->close();
 }
 $mysqli->close();
