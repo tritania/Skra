@@ -1,6 +1,6 @@
 <?php
 $username = $_GET['username'];
-$password = $_GET['pass'];
+$password = $_GET['password'];
 $email = $_GET['email'];
 $name = $_GET['name'];
 $weight = $_GET['weight'];
