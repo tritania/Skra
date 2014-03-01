@@ -10,10 +10,11 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
+
 if ($result = $mysqli->query("SELECT PASSWORD FROM LOGIN WHERE USERNAME ='" . $username ."'")) 
 {
     $row = mysqli_fetch_row($result);
-    if ($password == $row[0]) 
+	if ($password == $row[0]) 
     {
 		echo '1'; //valid
 	} 

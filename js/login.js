@@ -2,36 +2,45 @@ function login()
 {
     var user = document.getElementById('username').value;
     var pass = document.getElementById('password').value;
-    
-	var xmlhttp;
-	if (window.XMLHttpRequest)
+
+	
+	if(user && pass)
 	{
-	  xmlhttp=new XMLHttpRequest();
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		var xmlhttp;
+		if (window.XMLHttpRequest)
 		{
-		var res=xmlhttp.responseText;
-			if (res == 1)
+		  xmlhttp=new XMLHttpRequest();
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{
-				document.cookie='username';
-				clearlogin();
-			}
-			else 
-			{
-				alert("Invalid Username or Password");
+			var res=xmlhttp.responseText;
+				if (res == 1)
+				{
+					document.cookie='username';
+					clearlogin();
+				}
+				else 
+				{
+					alert("Invalid Username or Password");
+				}
 			}
 		}
+		xmlhttp.open("GET","php/login.php?username="+user+"&password="+pass,true);
+		xmlhttp.send();
 	}
-	xmlhttp.open("GET","php/login.php?username="+user+"&password="+pass,true);
-	xmlhttp.send();
+	
+	else
+	{
+		alert("Invalid Username or Password");
+	}
     
-    d3.select(".logincover").transition().duration(600).style("height","0px");
 }
 
 function clearlogin()
 {
+	d3.select(".logincover").transition().duration(600).style("height","0px");
 	d3.selectAll(".logtext").remove();
 	d3.selectAll(".inputbox").remove();
 	d3.selectAll("#logbtn").remove();
