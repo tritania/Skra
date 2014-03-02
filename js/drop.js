@@ -40,10 +40,9 @@ function drop(x)
                 
             }
 function addelem(ele)
-{ //needs to be a switch
+{
 	var j = d3.select(ele).style("height");
-	if (j == "300px")
-	{}
+	if (j == "300px"){}
 	else 
 	{
 		switch(ele)
@@ -53,21 +52,29 @@ function addelem(ele)
 				d3.select(ele).append("p").text("Please add a bloodsugar value below")
 					.attr("class","destroyme")
 					.style("text-align","center");
+                    
 				d3.select(ele).append("input").text("Blood glucose value")
 					.attr("class","destroyme")
 					.style("width","60%")
 					.style("margin-left","auto")
 					.style("margin-right","auto");
+                    
 				d3.select(ele).append("p").text("What time did you take it (blank for now)")
 					.attr("class","destroyme")
 					.style("text-align","center");
+                    
 				d3.select(ele).append("input").attr("type","datetime-local")
 					.attr("class","destroyme")
 					.style("width","60%")
 					.style("margin-left","auto")
 					.style("margin-right","auto");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+                    
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+                    
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
+                    
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")
@@ -87,7 +94,7 @@ function addelem(ele)
 				d3.select(ele).append("p").text("Amount of insulin taken")
 					.attr("class","destroyme")
 					.style("text-align","center");
-				d3.select(ele).append("input").text("Carbs:")
+                    d3.select(ele).append("input").text("Carbs:")
 					.attr("class","destroyme")
 					.style("width","60%")
 					.style("margin-left","auto")
@@ -100,8 +107,10 @@ function addelem(ele)
 					.style("width","60%")
 					.style("margin-left","auto")
 					.style("margin-right","auto");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")
@@ -118,8 +127,10 @@ function addelem(ele)
 					.style("width","60%")
 					.style("margin-left","auto")
 					.style("margin-right","auto");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")
@@ -144,8 +155,10 @@ function addelem(ele)
 					.style("margin-left","auto")
 					.style("margin-right","auto")
 					.attr("class","destroyme");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")
@@ -170,8 +183,10 @@ function addelem(ele)
 					.style("margin-left","auto")
 					.style("margin-right","auto")
 					.attr("class","destroyme");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")
@@ -188,8 +203,10 @@ function addelem(ele)
 					.style("margin-left","auto")
 					.style("margin-right","auto")
 					.attr("class","destroyme");
-				d3.select(ele).append("br");
-				d3.select(ele).append("br");
+				d3.select(ele).append("br")
+                    .attr("class","destroyme");
+				d3.select(ele).append("br")
+					.attr("class","destroyme");
 				d3.select(ele).append("div").text("Submit")
 					.attr("class","destroyme")
 					.attr("id","dropbutton")

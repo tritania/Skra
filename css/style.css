@@ -69,7 +69,8 @@ html {
     width:298px;
     background-color:#D1D1D1;
     font-family:arial;color:black;font-size:15px;
-    text-align:center
+    text-align:center;
+    cursor:default;
 }
 
 
@@ -83,6 +84,7 @@ html {
     border-top-right-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
     margin-top:15px;
+    cursor:default;
 }
 
     .buttonimg
@@ -97,6 +99,7 @@ html {
 		background-repeat:no-repeat;
 		background-size: 60px 60px;
 		background-position:center;
+        cursor:default;
     }
     
     #i1
@@ -147,6 +150,7 @@ html {
         border:1px solid;
         border-top-right-radius: 15px 15px;
         border-bottom-right-radius: 15px 15px;
+        cursor:default;
     }
     
         .buttontext
@@ -156,6 +160,7 @@ html {
             vertical-align: middle;
             font-family:arial;color:black;font-size:20px;
             line-height:325%;
+            cursor:default;
         }
 	
 
@@ -204,6 +209,7 @@ body
     border-bottom-right-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
     border-top-left-radius: 5px 5px;
+    cursor:default;
     
 }
 
@@ -268,6 +274,7 @@ body
     border-bottom-right-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
     border-top-left-radius: 5px 5px;
+    cursor:default;
     
 }
 
@@ -284,6 +291,7 @@ body
     border-bottom-right-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
     border-top-left-radius: 5px 5px;
+    cursor:default;
 }
 
 .registerdrop

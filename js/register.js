@@ -29,7 +29,7 @@ function registeruser()
 	{
         error("fill all of the forms please!")
 	}
-    
+
     else 
     {
         var xmlhttp;
@@ -45,7 +45,7 @@ function registeruser()
               {
                   inputdata();
               }
-              else 
+              
               {
                   error("select a different username!");
               }
@@ -66,7 +66,7 @@ function registeruser()
                 {
                 }
             }
-            xmlhttp.open("GET","php/register.php?username="+user+"&password="+pass+"&email="+email+"&name="+name+"&weight="+weight+"&height="+weight+"&age="+age,true);
+            xmlhttp.open("GET","php/register.php?username="+user+"&password="+pass+"&email="+email+"&name="+name+"&weight="+weight+"&height="+height+"&age="+age,true);
             xmlhttp.send();
             
             d3.select(".registerdrop").style("visibility", "hidden");
@@ -78,7 +78,7 @@ function registeruser()
 
 function error(errormessage)
 {
-	d3.select(".alertmsg").html("Please " + errormessage  + "");
+	d3.select(".alertmsg").html("Please " + errormessage);
 	d3.select(".alertmsg").style("color","red");
 	
 }
