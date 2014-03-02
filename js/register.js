@@ -47,7 +47,7 @@ function registeruser()
               }
               else 
               {
-                  error("Please select a different username!");
+                  error("select a different username!");
               }
           }
         }
