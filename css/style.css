@@ -65,7 +65,7 @@ body
     -moz-border-radius-bottomleft: 30px;
     -webkit-border-bottom-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    background-color: #5dc7ea;
+    background-color: rgb(114, 169, 217);
 }
 
 #buttontext
