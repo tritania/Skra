@@ -1,134 +1,32 @@
-<!DOCTYPE html>
-    <meta charset="utf-8">
-    <head>    
-		<title>SKRA</title>
-		<link rel="icon" href="/img/icon.ico"/>
+<html>
+    <head>
+        <title>SKRA</title>
+        <link rel="icon" href="/img/icon.ico">
         <script src="http://d3js.org/d3.v3.js"></script>
-        <script src="js/drop.js"></script>
-        <script src="js/login.js"></script>
-        <script src="js/drawgraph.js"></script>
-        <script src="js/logout.js"></script>
-        <script src="js/register.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     </head>
-
     <body>
-    
-    <div class="container">
-        <div class="uppermenu">
-			<form>
-				<div id="regbtn" onclick="register()">
-					<p id="regtext">register</p>
-				</div>
-				<div id="logbtn" onclick="login()">
-					<p id="lgntext">login</p>
-				</div>
-				<input id="password" class="inputbox" type="password">
-				<p class="logtext">Password:</p>
-				<input id="username" class="inputbox" type="text">
-				<p class="logtext">Username:</p>
-			</form>
+        <div class="container">
+            <div class="menu">
+                <form>
+                    <div id="register">
+                        <p id="buttontext">Sign Up</p>
+                    </div>
+                    <div id="login">
+                        <p id="buttontext" >Login</p>
+                    </div>
+                    <div id="userform">
+                        <input id="password" class="input" type="password">
+                    </div>
+                    <div id="passwordform">
+                        <input id="username" class="input" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="content">
+                <img src="img/skraname.svg" alt="SKRA" id="logo">
+            </div>
         </div>
-        <div class="registerdrop">
-		<p class="alertmsg">Please fill out the following information to register</p><br>
-        Username:        <input id="R1" type="text" name="Username"><br>
-        <br>
-        Password:        <input id="R2" type="password" name="password"><br>
-        <br>
-        Confirm Password:<input id="R3" type="password" name="confirmpassword"><br>
-        <br>
-        Email Address:   <input id="R4" type="text" name="email"><br>
-        <br>
-        Name:            <input id="R5" type="text" name="name"><br>
-        <br>
-        Weight(kg):      <input id="R6" type="text" name="weight"><br>
-        <br>
-        Height(cm):      <input id="R7" type="text" name="height"><br>
-        <br>
-        Age:             <input id="R8" type="text" name="age"><br>
-        <br>
-		<div id="logbtn2" onclick="registeruser()">
-			<p id="lgntext2">Register!</p>
-		</div>
-		<div id="logbtn2" onclick="registerclose()">
-			<p id="lgntext2">Cancel</p>
-		</div>
-        </div>
-        <div class="logincover"></div>
-        <div class="menu" id="menu">
-            
-           <div onclick="drop(1)" class="buttoncon" id="1">
-               <div class="buttontextcon" id="t1">
-                    <p class="buttontext">Add Bloodsugar</p>
-               </div>
-               <div class="buttonimg" id="i1"></div>
-           </div>
-           <div class="dropper" id="drop1"></div>
-           
-           <div onclick="drop(2)" class="buttoncon" id="2">
-               <div class="buttontextcon" id="t2">
-                    <p class="buttontext">Add Meal</p>
-               </div>
-               <div class="buttonimg" id="i2"></div>
-           </div>
-           <div class="dropper" id="drop2"></div>
-           
-           <div onclick="drop(3)" class="buttoncon" id="3">
-               <div class="buttontextcon" id="t3">
-                    <p id="tester3" class="buttontext">Change Insulin Dosage</p>
-               </div>
-               <div class="buttonimg" id="i3"></div>
-           </div>
-            <div class="dropper" id="drop3"></div>
-           
-           <div onclick="drop(4)" class="buttoncon" id="4">
-               <div class="buttontextcon" id="t4">
-                    <p class="buttontext">Add Exercise</p>
-               </div>
-               <div class="buttonimg" id="i4"></div>
-           </div>
-           <div class="dropper" id="drop4"></div>
-           
-            <div onclick="drop(5)" class="buttoncon" id="5">
-               <div class="buttontextcon" id="t5">
-                    <p class="buttontext">Add Injection</p>
-               </div>
-               <div class="buttonimg" id="i5"></div>
-           </div>
-           <div class="dropper" id="drop5"></div>
-           
-            <div onclick="drop(6)" class="buttoncon" id="6">
-               <div class="buttontextcon" id="t6">
-                    <p class="buttontext">Change Graph</p>
-               </div>
-               <div class="buttonimg" id="i6"></div>
-           </div>
-           <div class="dropper" id="drop6"></div>
-           
-           <div onclick="drop(7)" class="buttoncon" id="7">
-               <div class="buttontextcon" id="t7">
-                    <p class="buttontext">Calculate Dosage</p>
-               </div>
-               <div class="buttonimg" id="i7"></div>
-           </div>
-           <div class="dropper" id="drop7"></div>
-           
-          <div onclick="drop(8)" class="buttoncon" id="8">
-               <div class="buttontextcon" id="t8">
-                    <p class="buttontext">Settings</p>
-               </div>
-               <div class="buttonimg" id="i8"></div>
-           </div>
-           <div class="dropper" id="drop8"></div>
-           
-        </div>
-
-        <div class="chart">
-            <script>
-            drawgraph(1)
-            </script>
-        </div>
-    </div>
-
     </body>
 </html>
