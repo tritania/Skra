@@ -3,6 +3,8 @@
         <title>SKRA</title>
         <link rel="icon" href="/img/icon.ico">
         <script src="http://d3js.org/d3.v3.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/register.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     </head>
@@ -10,22 +12,40 @@
         <div class="container">
             <div class="menu">
                 <form>
-                    <div id="register">
+                    <div id="register" onclick="register()">
                         <p id="buttontext">Sign Up</p>
                     </div>
-                    <div id="login">
+                    <div id="login" onclick="login()">
                         <p id="buttontext" >Login</p>
                     </div>
                     <div id="userform">
-                        <input id="password" class="input" type="password" placeholder="Password">
+                        <input id="password" class="input" type="password" placeholder="Password" tabindex=2 onkeydown="if (event.keyCode == 13) document.getElementById('login').click()">
                     </div>
                     <div id="passwordform">
-                        <input id="username" class="input" type="text" placeholder="Username">
+                        <input id="username" class="input" type="text" placeholder="Username" tabindex=1>
                     </div>
                 </form>
             </div>
             <div class="content">
-                <img src="img/skraname.svg" alt="SKRA" id="logo">
+                <img src="img/skraname.svg" alt="SKRA" id="logo" class="prelog">
+            </div>
+            <div class="registerdiv">
+                Username:<input type="text" name="Username"><br>
+                <br>
+                Password:<input type="password" name="password"><br>
+                <br>
+                Confirm Password:<input type="password" name="confirmpassword"><br>
+                <br>
+                Email Address:<input type="text" name="email"><br>
+                <br>
+                Name:<input type="text" name="name"><br>
+                <br>
+                Weight(kg):<input type="text" name="weight"><br>
+                <br>
+                Height(cm):<input type="text" name="height"><br>
+                <br>
+                Age:<input type="text" name="age"><br>
+                <br>
             </div>
         </div>
     </body>
