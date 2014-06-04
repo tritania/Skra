@@ -1,5 +1,5 @@
-function register() {
+function signup() {
     "use strict";
-    console.log("Testing");
     d3.select(".registerdiv").style("visibility", "visible");
+    d3.select(".prc").attr("id", "registercover");
 }
