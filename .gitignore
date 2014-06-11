@@ -1,3 +1,4 @@
 upload
 *.geany
 node_modules
+*.db

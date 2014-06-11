@@ -5,7 +5,7 @@ var express = require("express"),
     errorHandler = require('errorhandler'),
     sqlite3 = require('sqlite3').verbose(),
     port = 4567;
-var db = new sqlite3.Database(__dirname + '/data/users.db');
+var db = new sqlite3.Database('public/data/data.db');
 
 app.get("/", function (req, res) {
   res.redirect("/index.html");

@@ -13,11 +13,12 @@ function closereg() {
 function register() {
     "use strict";
     var user     = document.getElementById("username").value;
-	var pass     = document.getElementById("conf").value;
+	var pass     = document.getElementById("pass").value;
 	var confpass = document.getElementById("confpass").value;
 	var email    = document.getElementById("email").value;
 	var name     = document.getElementById("name").value;
 	var weight   = document.getElementById("weight").value;
 	var height   = document.getElementById("height").value;
 	var age      = document.getElementById("age").value;
+    createTable();
 }
