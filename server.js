@@ -5,6 +5,8 @@ var express = require("express"),
     errorHandler = require('errorhandler'),
     sqlite3 = require('sqlite3').verbose(),
     port = 4567;
+var io = require('socket.io').listen(app.listen(port));
+
 var db = new sqlite3.Database('public/data/data.db');
 
 app.get("/", function (req, res) {
@@ -19,9 +21,11 @@ app.use(errorHandler({
   showStack: true
 }));
 
-app.listen(port);
+io.sockets.on('connection', function(socket) {
+    socket.on('register', function(data) {
+       console.log("data recieved"); 
+    });
+});
 
-function createTable() {
-    "use strict";
-    db.run("CREATE TABLE test (info TEXT)");
-}
+
+

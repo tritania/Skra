@@ -1,3 +1,5 @@
+var socket = io.connect("127.0.0.1:4567"); 
+
 function signup() {
     "use strict";
     d3.select(".registerdiv").style("visibility", "visible");
@@ -20,5 +22,16 @@ function register() {
 	var weight   = document.getElementById("weight").value;
 	var height   = document.getElementById("height").value;
 	var age      = document.getElementById("age").value;
-    createTable();
+    
+    var registerdata = {
+        username: user,
+        password: pass,
+        email: email,
+        name: name,
+        weight: weight,
+        height: height,
+        age: age
+    }
+    
+    socket.emit("register",registerdata);
 }
