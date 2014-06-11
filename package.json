@@ -1,7 +1,7 @@
 {
-  "name": "simple-express-static-server",
+  "name": "Skra",
   "version": "0.0.1",
-  "description": "Skra",
+  "description": "Diabetic tracking application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,7 +11,7 @@
     "url": "git://github.com/tritania/Skra.git"
   },
   "author": "Erik Wilson",
-  "license": "GNU v3",
+  "license": "GNU version 3",
   "homepage": "https://github.com/tritania/Skra",
   "dependencies": {
     "express": "^4.1.2",
