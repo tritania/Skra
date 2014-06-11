@@ -1,0 +1,22 @@
+{
+  "name": "simple-express-static-server",
+  "version": "0.0.1",
+  "description": "Skra",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tritania/Skra.git"
+  },
+  "author": "Erik Wilson",
+  "license": "GNU v3",
+  "homepage": "https://github.com/tritania/Skra",
+  "dependencies": {
+    "express": "^4.1.2",
+    "body-parser": "^1.1.2",
+    "errorhandler": "^1.0.1",
+    "method-override": "^1.0.0"
+  }
+}
