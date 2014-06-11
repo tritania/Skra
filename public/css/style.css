@@ -35,6 +35,7 @@ body
 .registerdiv
 {
     padding: 30px;
+    padding-top: 10px;
     background-color: silver;
     position: relative;
     width: 500px;
@@ -113,6 +114,7 @@ body
     -webkit-border-bottom-left-radius: 30px;
     border-bottom-left-radius: 30px;
     background-color: rgb(114, 169, 217);
+    margin-bottom: 20px;
 }
 
 #login, 
