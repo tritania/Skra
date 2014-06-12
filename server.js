@@ -8,6 +8,7 @@ var express = require("express"),
 var io = require('socket.io').listen(app.listen(port));
 
 var db = new sqlite3.Database('public/data/data.db');
+db.run("create table if not exists USERS (user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)")
 
 app.get("/", function (req, res) {
   res.redirect("/index.html");
@@ -23,7 +24,18 @@ app.use(errorHandler({
 
 io.sockets.on('connection', function(socket) {
     socket.on('register', function(data) {
-       console.log("data recieved"); 
+        var username = data.username;
+        var password = data.password;
+        var email = data.email;
+        var name = data.name;
+        var weight = data.weight;
+        var height = data.height;
+        var age = data.age;
+        
+        db.run("INSERT INTO USERS VALUES ("+ username +","+ password +","+ email +","+ name +","+ weight +","+ height +","+ age +")");
+    });
+    socket.on('login', function(data) {
+       
     });
 });
 
