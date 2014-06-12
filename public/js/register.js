@@ -1,4 +1,6 @@
-var socket = io.connect("127.0.0.1:4567"); 
+/*jslint browser: true*/
+/*global d3, console,io*/
+var socket = io.connect("127.0.0.1:4567");
 
 function signup() {
     "use strict";
@@ -14,16 +16,18 @@ function closereg() {
 
 function register() {
     "use strict";
-    var user     = document.getElementById("username").value;
-	var pass     = document.getElementById("pass").value;
-	var confpass = document.getElementById("confpass").value;
-	var email    = document.getElementById("email").value;
-	var name     = document.getElementById("name").value;
-	var weight   = document.getElementById("weight").value;
-	var height   = document.getElementById("height").value;
-	var age      = document.getElementById("age").value;
+    var user     = document.getElementById("username").value,
+	    pass     = document.getElementById("pass").value,
+	    confpass = document.getElementById("confpass").value,
+	    email    = document.getElementById("email").value,
+	    name     = document.getElementById("name").value,
+	    weight   = document.getElementById("weight").value,
+	    height   = document.getElementById("height").value,
+	    age      = document.getElementById("age").value,
+        registerdata;
+    console.log(user);
     
-    var registerdata = {
+    registerdata = {
         username: user,
         password: pass,
         email: email,
@@ -31,7 +35,8 @@ function register() {
         weight: weight,
         height: height,
         age: age
-    }
+    };
     
-    socket.emit("register",registerdata);
+    socket.emit("register", registerdata);
+    closereg();
 }

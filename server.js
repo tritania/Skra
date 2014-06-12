@@ -1,3 +1,6 @@
+/*jslint node: true*/
+/*global io*/
+"use strict";
 var express = require("express"),
     app = express(),
     methodOverride = require('method-override'),
@@ -8,37 +11,37 @@ var express = require("express"),
 var io = require('socket.io').listen(app.listen(port));
 
 var db = new sqlite3.Database('public/data/data.db');
-db.run("create table if not exists USERS (user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)")
+db.run("create table if not exists USERS (user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)");
 
 app.get("/", function (req, res) {
-  res.redirect("/index.html");
+    res.redirect("/index.html");
 });
 
 app.use(methodOverride());
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.use(errorHandler({
-  dumpExceptions: true,
-  showStack: true
+    dumpExceptions: true,
+    showStack: true
 }));
 
-io.sockets.on('connection', function(socket) {
-    socket.on('register', function(data) {
-        var username = data.username;
-        var password = data.password;
-        var email = data.email;
-        var name = data.name;
-        var weight = data.weight;
-        var height = data.height;
-        var age = data.age;
+io.sockets.on('connection', function (socket) {
+    socket.on('register', function (data) {
+        var username = data.username,
+            password = data.password,
+            email = data.email,
+            name = data.name,
+            weight = data.weight,
+            height = data.height,
+            age = data.age;
         
-        db.serialize(function() {
+        db.serialize(function () {
             var stmt = db.prepare("INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?)");
             stmt.run(username, password, email, name, weight, height, age);
             stmt.finalize();
         });
     });
-    socket.on('login', function(data) {
+    socket.on('login', function (data) {
        
     });
 });
