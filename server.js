@@ -32,12 +32,13 @@ io.sockets.on('connection', function(socket) {
         var height = data.height;
         var age = data.age;
         
-        db.run("INSERT INTO USERS VALUES ("+ username +","+ password +","+ email +","+ name +","+ weight +","+ height +","+ age +")");
+        db.serialize(function() {
+            var stmt = db.prepare("INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?)");
+            stmt.run(username, password, email, name, weight, height, age);
+            stmt.finalize();
+        });
     });
     socket.on('login', function(data) {
        
     });
 });
-
-
-
