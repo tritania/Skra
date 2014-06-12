@@ -16,8 +16,8 @@ function closereg() {
 
 function register() {
     "use strict";
-    var user     = document.getElementById("username").value,
-	    pass     = document.getElementById("pass").value,
+    var pass     = document.getElementById("pass").value,
+        user     = document.getElementById("user").value,
 	    confpass = document.getElementById("confpass").value,
 	    email    = document.getElementById("email").value,
 	    name     = document.getElementById("name").value,
