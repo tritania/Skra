@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
         <title>SKRA</title>
         <link rel="icon" href="/img/icon.ico">
@@ -13,20 +13,18 @@
         <div class="prc"></div>
         <div class="container">
             <div class="menu">
-                <form>
-                    <div id="register" onclick="signup()">
-                        <p id="buttontext">Sign Up</p>
-                    </div>
-                    <div id="login" onclick="login()">
-                        <p id="buttontext" >Login</p>
-                    </div>
-                    <div id="userform">
-                        <input id="password" class="input" type="password" placeholder="Password" tabindex=2 onkeydown="if (event.keyCode == 13) document.getElementById('login').click()">
-                    </div>
-                    <div id="passwordform">
-                        <input id="username" class="input" type="text" placeholder="Username" tabindex=1>
-                    </div>
-                </form>
+                <div id="register" onclick="signup()">
+                    <p class="buttontext">Sign Up</p>
+                </div>
+                <div id="login" onclick="login()">
+                    <p class="buttontext" >Login</p>
+                </div>                    
+                <div id="userform">
+                    <input id="password" class="input" type="password" placeholder="Password" tabindex=2 onkeydown="if (event.keyCode == 13) document.getElementById('login').click()">
+                </div>
+                <div id="passwordform">
+                    <input id="username" class="input" type="text" placeholder="Username" tabindex=1>
+                </div>
             </div>
             <div class="content">
                 <img src="img/skraname.svg" alt="SKRA" id="logo" class="prelog">
@@ -50,11 +48,11 @@
             <br>
             <input id="age" type="text" class="regi" placeholder="Age"><br>
             <br>
-            <div id="rmb" onclick="register()">
-                 <p id="buttontext">Submit</p>
+            <div class="rmb" onclick="register()">
+                 <p class="buttontext">Submit</p>
             </div>
-            <div id="rmb" onclick="closereg()">
-                <p id="buttontext">Cancel</p>
+            <div class="rmb" onclick="closereg()">
+                <p class="buttontext">Cancel</p>
             </div>
             <br>
         </div>

@@ -67,7 +67,6 @@ body
     margin-right: 15px;
     height: 25px;
     width: 150px;
-    outline: 0;
     background-color: white;
     -moz-border-radius-topright: 30px;
     -webkit-border-top-right-radius: 30px;
@@ -86,9 +85,9 @@ body
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 15px;
-    height: 25px;
+    height: 20px;
     width: 150px;
-    outline: 0;
+    outline-color: rgb(149, 165, 165);
     background-color: white;
     -moz-border-radius-topright: 30px;
     -webkit-border-top-right-radius: 30px;
@@ -98,7 +97,7 @@ body
     border-bottom-left-radius: 30px;
 }
 
-#rmb
+.rmb
 {
     float: left;
     margin-bottom: 20px;
@@ -114,7 +113,6 @@ body
     -webkit-border-bottom-left-radius: 30px;
     border-bottom-left-radius: 30px;
     background-color: rgb(114, 169, 217);
-    margin-bottom: 20px;
 }
 
 #login, 
@@ -137,13 +135,12 @@ body
     background-color: rgb(114, 169, 217);
 }
 
-#buttontext
+.buttontext
 {
     font-family:"Helvetica Neue", sans-serif;color:black;font-size:15px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align:center;
-	text-align:middle;
 }
 
 #logo
