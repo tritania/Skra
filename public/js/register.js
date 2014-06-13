@@ -1,15 +1,17 @@
 /*jslint browser: true*/
 /*global d3, console,io*/
 var socket = io.connect("127.0.0.1:4567");
+var valid = [1];
 
 function invalidUser(data) {
     "use strict";
     var state = data.valid;
-    console.log(state);
+    console.log(valid.length);
     if (state) {
-        d3.select("#user").style("background-color", "green");
+        d3.select("#user").style("background-color", "rgba(45, 191, 44, 0.70)");
+        valid[0] = true;
     } else {
-        d3.select("#user").style("background-color", "red");
+        d3.select("#user").style("background-color", "rgba(255, 0, 0, 0.70)");
     }
 }
 
@@ -63,5 +65,7 @@ function checkUser() {
         check = {
             username: username
         };
-    socket.emit("usercheck", check);
+    if (username !== "") {
+        socket.emit("usercheck", check);
+    }
 }

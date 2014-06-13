@@ -58,10 +58,8 @@ io.sockets.on('connection', function (socket) {
                 } else {
                     valid = { valid: true };
                 }
-                console.log(valid);
-                
+                socket.emit("userChecked", valid);
             });
         });
-        socket.emit("userChecked", valid);
     });
 });
