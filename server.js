@@ -13,9 +13,9 @@ var express = require("express"),
     port = 443,
     
     options = {
-        ca: fs.readFileSync('keys/skra.ca-bundle').toString(),
-        key: fs.readFileSync('keys/skra.key').toString(),
-        cert: fs.readFileSync('keys/skra_org.crt').toString()
+        key: fs.readFileSync('keys/skra.key'),
+        cert: fs.readFileSync('keys/skra_org.crt'),
+        ca: [fs.readFileSync('keys/AddTrustExternalCARoot.crt'), fs.readFileSync('keys/COMODORSAAddTrustCA.crt'),  fs.readFileSync('keys/COMODORSADomainValidationSecureServerCA.crt')]
     },
     
     server = https.createServer(options, app).listen(port, 'skra.org', function () {
