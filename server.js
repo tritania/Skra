@@ -11,7 +11,7 @@ var express = require("express"),
 var io = require('socket.io').listen(app.listen(port));
 
 var db = new sqlite3.Database('public/data/data.db');
-db.run("create table if not exists USERS (user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)");
+db.run("create table if not exists USERS (userid INTEGER PRIMARY KEY, user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)");
 
 app.get("/", function (req, res) {
     res.redirect("/index.html");
@@ -36,7 +36,7 @@ io.sockets.on('connection', function (socket) {
             age = data.age;
         
         db.serialize(function () {
-            var stmt = db.prepare("INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?)");
+            var stmt = db.prepare("INSERT INTO USERS (user, password, email, name, weight, height, age) VALUES (?,?,?,?,?,?,?)");
             stmt.run(username, password, email, name, weight, height, age);
             stmt.finalize();
         });
