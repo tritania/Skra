@@ -52,18 +52,16 @@ io.sockets.on('connection', function (socket) {
         var username = data.username,
             valid;
         db.serialize(function () {
-            db.each("SELECT * FROM USERS WHERE user = ? LIMIT 1", username, function (err, row) {
-                console.log(row.userid);
-                if (row.userid) {
-                    console.log("assd");
+            db.all("SELECT * FROM USERS WHERE user = ? LIMIT 1", username, function (err, rows) {
+                if (rows[0]) {
                     valid = { valid: false };
                 } else {
-                    console.log("asd");
                     valid = { valid: true };
                 }
                 console.log(valid);
-                io.sockets.socket(socket.id).emit("userChecked", valid);
+                
             });
         });
+        socket.emit("userChecked", valid);
     });
 });

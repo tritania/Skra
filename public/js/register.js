@@ -5,6 +5,7 @@ var socket = io.connect("127.0.0.1:4567");
 function invalidUser(data) {
     "use strict";
     var state = data.valid;
+    console.log(state);
     if (state) {
         d3.select("#user").style("background-color", "green");
     } else {
