@@ -2,3 +2,6 @@ upload
 *.geany
 node_modules
 *.db
+*.crt
+*.key
+*.csr

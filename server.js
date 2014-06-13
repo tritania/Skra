@@ -6,9 +6,31 @@ var express = require("express"),
     methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     errorHandler = require('errorhandler'),
+    https = require('https'),
+    fs = require('fs'),
+    http = require('http'),
     sqlite3 = require('sqlite3').verbose(),
-    port = 4567;
-var io = require('socket.io').listen(app.listen(port));
+    port = 4567,
+    options = {
+        key: fs.readFileSync('keys/server.key').toString(),
+        cert: fs.readFileSync('keys/server.crt').toString()
+    },
+    server = https.createServer(options, app).listen(port, function () {
+        console.log("Express server listening on port " + port);
+    });
+var io = require('socket.io').listen(server);
+
+
+var httpApp = express();
+var httpRouter = express.Router();
+httpApp.use('*', httpRouter);
+httpRouter.get('*', function (req, res) {
+    var destination = 'https://127.0.0.1:4567';
+    return res.redirect(destination);
+});
+var httpServer = http.createServer(httpApp);
+httpServer.listen(4560);
+
 
 var db = new sqlite3.Database('public/data/data.db');
 db.run("create table if not exists USERS (userid INTEGER PRIMARY KEY, user TEXT, password TEXT, email TEXT, name TEXT, weight NUMERIC, height NUMERIC, age NUMERIC)");
