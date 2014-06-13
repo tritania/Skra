@@ -1,6 +1,6 @@
 /*jslint browser: true*/
 /*global d3, console,io*/
-var socket = io.connect("127.0.0.1:4567");
+var socket = io.connect("skra.org:443");
 var valid = [1];
 
 function invalidUser(data) {
