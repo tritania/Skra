@@ -69,3 +69,33 @@ function checkUser() {
         socket.emit("usercheck", check);
     }
 }
+
+function checkPassword() {
+    "use strict";
+    var pass     = document.getElementById("pass").value,
+        confpass = document.getElementById("confpass").value;
+    if (pass !== "") {
+        if (pass === confpass) {
+            d3.select("#pass").style("background-color", "rgba(45, 191, 44, 0.70)");
+            d3.select("#confpass").style("background-color", "rgba(45, 191, 44, 0.70)");
+            valid[1] = true;
+        } else {
+            d3.select("#pass").style("background-color", "rgba(255, 0, 0, 0.70)");
+            d3.select("#confpass").style("background-color", "rgba(255, 0, 0, 0.70)");
+        }
+    }
+}
+
+function checkEmail() {
+    "use strict";
+    var email = document.getElementById("email").value,
+        atpos = email.indexOf("@"),
+        dotpos = email.lastIndexOf(".");
+    if (email !== "") {
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+            d3.select("#email").style("background-color", "rgba(255, 0, 0, 0.70)");
+        } else {
+            d3.select("#email").style("background-color", "rgba(45, 191, 44, 0.70)");
+        }
+    }
+}
