@@ -26,6 +26,7 @@ app.use(errorHandler({
 }));
 
 io.sockets.on('connection', function (socket) {
+    
     socket.on('register', function (data) {
         var username = data.username,
             password = data.password,
@@ -40,8 +41,29 @@ io.sockets.on('connection', function (socket) {
             stmt.run(username, password, email, name, weight, height, age);
             stmt.finalize();
         });
+        db.close();
     });
+    
     socket.on('login', function (data) {
        
+    });
+    
+    socket.on('usercheck', function (data) {
+        var username = data.username,
+            valid;
+        db.serialize(function () {
+            db.each("SELECT * FROM USERS WHERE user = ? LIMIT 1", username, function (err, row) {
+                console.log(row.userid);
+                if (row.userid) {
+                    console.log("assd");
+                    valid = { valid: false };
+                } else {
+                    console.log("asd");
+                    valid = { valid: true };
+                }
+                console.log(valid);
+                io.sockets.socket(socket.id).emit("userChecked", valid);
+            });
+        });
     });
 });
