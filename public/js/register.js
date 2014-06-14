@@ -1,12 +1,12 @@
 /*jslint browser: true*/
+/*jslint plusplus: true */
 /*global d3, console,io*/
 var socket = io.connect("skra.org:443");
-var valid = [1];
+var valid = [6];
 
 function invalidUser(data) {
     "use strict";
     var state = data.valid;
-    console.log(valid.length);
     if (state) {
         d3.select("#user").style("background-color", "rgba(45, 191, 44, 0.70)");
         valid[0] = true;
@@ -67,6 +67,8 @@ function checkUser() {
         };
     if (username !== "") {
         socket.emit("usercheck", check);
+    } else {
+        d3.select("#user").style("background-color", "white");
     }
 }
 
@@ -96,6 +98,48 @@ function checkEmail() {
             d3.select("#email").style("background-color", "rgba(255, 0, 0, 0.70)");
         } else {
             d3.select("#email").style("background-color", "rgba(45, 191, 44, 0.70)");
+            valid[2] = true;
         }
+    } else {
+        d3.select("#email").style("background-color", "white");
+    }
+}
+
+function checkName() {
+    "use strict";
+    var name = document.getElementById("name").value;
+    if (name !== "") {
+        if (name.length > 1) {
+            d3.select("#name").style("background-color", "rgba(45, 191, 44, 0.70)");
+            valid[3] = true;
+        } else {
+            d3.select("#name").style("background-color", "rgba(255, 0, 0, 0.70)");
+        }
+    } else {
+        d3.select("#name").style("background-color", "white");
+    }
+}
+
+function checkNumeric(id) {
+    "use strict";
+    var value = document.getElementById(id).value,
+        check = value.split(''),
+        valid,
+        i;
+    if (value !== "") {
+        for (i = 0; i < value.length; i++) {
+            if (parseFloat(check[i])) {
+                valid = true;
+            } else {
+                valid = false;
+            }
+        }
+        if (valid) {
+            d3.select("#" + id).style("background-color", "rgba(45, 191, 44, 0.70)");
+        } else {
+            d3.select("#" + id).style("background-color", "rgba(255, 0, 0, 0.70)");
+        }
+    } else {
+        d3.select("#" + id).style("background-color", "white");
     }
 }

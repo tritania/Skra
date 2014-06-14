@@ -74,6 +74,7 @@ body
     -moz-border-radius-bottomleft: 30px;
     -webkit-border-bottom-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    outline-color: silver;
 }
 
 .input

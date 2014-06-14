@@ -39,13 +39,13 @@
             <br>
             <input id="email" type="email" class="regi" placeholder="Email" onblur="checkEmail()"><br>
             <br>
-            <input id="name" type="text" class="regi" placeholder="Name"><br>
+            <input id="name" type="text" class="regi" placeholder="Name" onblur="checkName()"><br>
             <br>
-            <input id="weight" type="text" class="regi" placeholder="Weight (Kg)"><br>
+            <input id="weight" type="text" class="regi" placeholder="Weight (Kg)" onblur="checkNumeric('weight')"><br>
             <br>
-            <input id="height" type="text" class="regi" placeholder="Height (cm)"><br>
+            <input id="height" type="text" class="regi" placeholder="Height (cm)" onblur="checkNumeric('height')"><br>
             <br>
-            <input id="age" type="text" class="regi" placeholder="Age"><br>
+            <input id="age" type="text" class="regi" placeholder="Age" onblur="checkNumeric('age')"><br>
             <br>
             <div class="rmb" onclick="register()">
                  <p class="buttontext">Submit</p>

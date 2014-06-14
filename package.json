@@ -19,6 +19,7 @@
     "errorhandler": "^1.0.1",
     "method-override": "^1.0.0",
     "sqlite3": "^2.2.3",
-    "socket.io": "^1.0.4"
+    "socket.io": "^1.0.4",
+    "crypto": "^0.0.3"
   }
 }
