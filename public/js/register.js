@@ -128,7 +128,8 @@ function checkNumeric(id) {
         i;
     if (value !== "") {
         for (i = 0; i < value.length; i++) {
-            if (parseFloat(check[i])) {
+            if (valid === false) { break; }
+            if (parseFloat(check[i]) || check[i] === '0') {
                 valid = true;
             } else {
                 valid = false;
