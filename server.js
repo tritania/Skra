@@ -9,6 +9,7 @@ var express = require("express"),
     https = require('https'),
     fs = require('fs'),
     http = require('http'),
+    bcrypt = require('bcrypt-nodejs'),
     sqlite3 = require('sqlite3').verbose(),
     port = 443,
     
