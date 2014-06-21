@@ -2,14 +2,14 @@
 /*jslint plusplus: true */
 /*global d3, console,io*/
 var socket = io.connect("skra.org:443");
-var valid = [6];
+var valid = 0;
 
 function invalidUser(data) {
     "use strict";
     var state = data.valid;
     if (state) {
         d3.select("#user").style("background-color", "rgba(45, 191, 44, 0.70)");
-        valid[0] = true;
+        valid++;
     } else {
         d3.select("#user").style("background-color", "rgba(255, 0, 0, 0.70)");
     }
@@ -34,29 +34,32 @@ function closereg() {
 
 function register() {
     "use strict";
-    var pass     = document.getElementById("pass").value,
-        user     = document.getElementById("user").value,
-	    confpass = document.getElementById("confpass").value,
-	    email    = document.getElementById("email").value,
-	    name     = document.getElementById("name").value,
-	    weight   = document.getElementById("weight").value,
-	    height   = document.getElementById("height").value,
-	    age      = document.getElementById("age").value,
-        registerdata;
-    console.log(user);
+    if (valid === 7) {
+        var pass     = document.getElementById("pass").value,
+            user     = document.getElementById("user").value,
+            confpass = document.getElementById("confpass").value,
+            email    = document.getElementById("email").value,
+            name     = document.getElementById("name").value,
+            weight   = document.getElementById("weight").value,
+            height   = document.getElementById("height").value,
+            age      = document.getElementById("age").value,
+            registerdata;
+        console.log(user);
+
+        registerdata = {
+            username: user,
+            password: pass,
+            email: email,
+            name: name,
+            weight: weight,
+            height: height,
+            age: age
+        };
     
-    registerdata = {
-        username: user,
-        password: pass,
-        email: email,
-        name: name,
-        weight: weight,
-        height: height,
-        age: age
-    };
+        socket.emit("register", registerdata);
+        closereg();
+    }
     
-    socket.emit("register", registerdata);
-    closereg();
 }
 
 function checkUser() {
@@ -80,7 +83,7 @@ function checkPassword() {
         if (pass === confpass) {
             d3.select("#pass").style("background-color", "rgba(45, 191, 44, 0.70)");
             d3.select("#confpass").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid[1] = true;
+            valid++;
         } else {
             d3.select("#pass").style("background-color", "rgba(255, 0, 0, 0.70)");
             d3.select("#confpass").style("background-color", "rgba(255, 0, 0, 0.70)");
@@ -98,7 +101,7 @@ function checkEmail() {
             d3.select("#email").style("background-color", "rgba(255, 0, 0, 0.70)");
         } else {
             d3.select("#email").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid[2] = true;
+            valid++;
         }
     } else {
         d3.select("#email").style("background-color", "white");
@@ -111,7 +114,7 @@ function checkName() {
     if (name !== "") {
         if (name.length > 1) {
             d3.select("#name").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid[3] = true;
+            valid++;
         } else {
             d3.select("#name").style("background-color", "rgba(255, 0, 0, 0.70)");
         }
@@ -124,18 +127,18 @@ function checkNumeric(id) {
     "use strict";
     var value = document.getElementById(id).value,
         check = value.split(''),
-        valid,
+        isValid,
         i;
     if (value !== "") {
         for (i = 0; i < value.length; i++) {
-            if (valid === false) { break; }
+            if (isValid === false) { break; }
             if (parseFloat(check[i]) || check[i] === '0') {
-                valid = true;
+                isValid = true;
             } else {
-                valid = false;
+                isValid = false;
             }
         }
-        if (valid) {
+        if (isValid) {
             d3.select("#" + id).style("background-color", "rgba(45, 191, 44, 0.70)");
         } else {
             d3.select("#" + id).style("background-color", "rgba(255, 0, 0, 0.70)");
