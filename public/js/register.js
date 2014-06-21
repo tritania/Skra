@@ -2,23 +2,36 @@
 /*jslint plusplus: true */
 /*global d3, console,io*/
 var socket = io.connect("skra.org:443");
-var valid = 0;
+var valid = new Array(7);
 
-function invalidUser(data) {
+function validate(id, value) {
     "use strict";
-    var state = data.valid;
-    if (state) {
-        d3.select("#user").style("background-color", "rgba(45, 191, 44, 0.70)");
-        valid++;
-    } else {
-        d3.select("#user").style("background-color", "rgba(255, 0, 0, 0.70)");
+    valid[id] = value;
+}
+
+function isReady() {
+    "use strict";
+    var i = 0;
+    for (i; i < valid.length; i++) {
+        if (valid[i] !== true) {
+            return false;
+        }
     }
+    return true;
 }
 
 socket.on("userChecked", function (data) {
     "use strict";
-    invalidUser(data);
+    var state = data.valid;
+    if (state) {
+        d3.select("#user").style("background-color", "rgba(45, 191, 44, 0.70)");
+        validate(0, true);
+    } else {
+        d3.select("#user").style("background-color", "rgba(255, 0, 0, 0.70)");
+        validate(0, false);
+    }
 });
+
 
 function signup() {
     "use strict";
@@ -34,7 +47,7 @@ function closereg() {
 
 function register() {
     "use strict";
-    if (valid === 7) {
+    if (isReady()) {
         var pass     = document.getElementById("pass").value,
             user     = document.getElementById("user").value,
             confpass = document.getElementById("confpass").value,
@@ -75,6 +88,7 @@ function checkUser() {
         socket.emit("usercheck", check);
     } else {
         d3.select("#user").style("background-color", "white");
+        validate(0, false);
     }
 }
 
@@ -86,10 +100,11 @@ function checkPassword() {
         if (pass === confpass) {
             d3.select("#pass").style("background-color", "rgba(45, 191, 44, 0.70)");
             d3.select("#confpass").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid++;
+            validate(1, true);
         } else {
             d3.select("#pass").style("background-color", "rgba(255, 0, 0, 0.70)");
             d3.select("#confpass").style("background-color", "rgba(255, 0, 0, 0.70)");
+            validate(1, false);
         }
     }
 }
@@ -102,12 +117,16 @@ function checkEmail() {
     if (email !== "") {
         if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
             d3.select("#email").style("background-color", "rgba(255, 0, 0, 0.70)");
+            validate(2, false);
         } else {
             d3.select("#email").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid++;
+            validate(2, true);
         }
     } else {
         d3.select("#email").style("background-color", "white");
+        if (valid > 0) {
+            validate(2, false);
+        }
     }
 }
 
@@ -117,16 +136,22 @@ function checkName() {
     if (name !== "") {
         if (name.length > 1) {
             d3.select("#name").style("background-color", "rgba(45, 191, 44, 0.70)");
-            valid++;
+            validate(3, true);
         } else {
             d3.select("#name").style("background-color", "rgba(255, 0, 0, 0.70)");
+            if (valid > 0) {
+                validate(3, false);
+            }
         }
     } else {
         d3.select("#name").style("background-color", "white");
+        if (valid > 0) {
+            validate(3, false);
+        }
     }
 }
 
-function checkNumeric(id) {
+function checkNumeric(id, vid) {
     "use strict";
     var value = document.getElementById(id).value,
         check = value.split(''),
@@ -143,10 +168,15 @@ function checkNumeric(id) {
         }
         if (isValid) {
             d3.select("#" + id).style("background-color", "rgba(45, 191, 44, 0.70)");
+            validate(vid, true);
         } else {
             d3.select("#" + id).style("background-color", "rgba(255, 0, 0, 0.70)");
+            validate(vid, false);
         }
     } else {
         d3.select("#" + id).style("background-color", "white");
+        if (valid > 0) {
+            validate(vid, false);
+        }
     }
 }
