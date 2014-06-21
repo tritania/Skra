@@ -58,6 +58,9 @@ function register() {
     
         socket.emit("register", registerdata);
         closereg();
+    } else {
+        d3.select("#regdes").insert("p").text("Please fill out all input boxes before hitting submit!")
+            .style("color", "red");
     }
     
 }
