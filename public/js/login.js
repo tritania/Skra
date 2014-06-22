@@ -22,10 +22,16 @@ socket.on("loginevent", function (data) {
     if (data) {
         //logged in
     } else {
-        d3.select("#ilogin").style("visibility", "visible");
-        d3.select("#ilogin").transition()
+        document.getElementById("username").value  = "";
+        document.getElementById("password").value  = "";
+        d3.select("#ilogin")
+            .style("visibility", "visible")
+            .style("opacity", 1);
+        d3.select("#ilogin")
+            .transition()
             .duration(2500)
             .style("opacity", 0)
             .style("visibilty", "hidden");
+        
     }
 });
