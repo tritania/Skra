@@ -130,7 +130,25 @@ io.sockets.on('connection', function (socket) {
     });
     
     socket.on('login', function (data) {
-       
+        var username = data.username,
+            password = data.password;
+        db.serialize(function () {
+            db.all("SELECT password FROM USERS WHERE user = ? LIMIT 1", username, function (err, rows) {
+                if (rows[0]) {
+                    bcrypt.compare(password, rows[0].password, function (err, res) {
+                        if (res) {
+                            //password was right
+                        } else {
+                            //password was wrong but user does exist
+                        }
+                    });
+                } else {
+                    //user does not exist
+                    console.log("false");
+                }
+               
+            });
+        });
     });
     
     socket.on('usercheck', function (data) {
