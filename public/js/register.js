@@ -32,6 +32,14 @@ socket.on("userChecked", function (data) {
     }
 });
 
+socket.on("wronglyreg", function (data) {
+    "use strict";
+    d3.select(".temp").remove();
+    d3.select("#regdes").insert("p").text("Please fill out all input boxes correctly before hitting submit!")
+        .style("color", "red")
+        .attr("class", "temp");
+});
+
 
 function signup() {
     "use strict";
@@ -74,7 +82,7 @@ function register() {
         closereg();
     } else {
         d3.select(".temp").remove();
-        d3.select("#regdes").insert("p").text("Please fill out all input boxes before hitting submit!")
+        d3.select("#regdes").insert("p").text("Please fill out all input boxes correctly before hitting submit!")
             .style("color", "red")
             .attr("class", "temp");
     }

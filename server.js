@@ -122,6 +122,9 @@ io.sockets.on('connection', function (socket) {
                 stmt.run(username, password, email, name, weight, height, age);
                 stmt.finalize();
             });
+        } else {
+            var send = { valid: false};
+            socket.emit("wronglyreg", send);
         }
     });
     
