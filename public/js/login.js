@@ -24,7 +24,8 @@ socket.on("loginevent", function (data) {
     } else {
         d3.select("#ilogin").style("visibility", "visible");
         d3.select("#ilogin").transition()
-            .duration(500)
-            .style("opacity", 1);
+            .duration(2500)
+            .style("opacity", 0)
+            .style("visibilty", "hidden");
     }
 });
