@@ -115,11 +115,12 @@ io.sockets.on('connection', function (socket) {
                 name = data.name,
                 weight = data.weight,
                 height = data.height,
-                age = data.age;
+                age = data.age,
+                hash = bcrypt.hashSync(password);
 
             db.serialize(function () {
                 var stmt = db.prepare("INSERT INTO USERS (user, password, email, name, weight, height, age) VALUES (?,?,?,?,?,?,?)");
-                stmt.run(username, password, email, name, weight, height, age);
+                stmt.run(username, hash, email, name, weight, height, age);
                 stmt.finalize();
             });
         } else {
