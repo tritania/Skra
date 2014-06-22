@@ -17,7 +17,11 @@ function login() {
     
 }
 
-socket.on("wronglylog", function (data) {
+socket.on("loginevent", function (data) {
     "use strict";
-    console.log("Login is not valid"); //place holder
+    if (data) {
+        //logged in
+    } else {
+        //not logged in create d3 fade event
+    }
 });
