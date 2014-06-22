@@ -62,6 +62,7 @@ function register() {
         registerdata = {
             username: user,
             password: pass,
+            confpass: confpass,
             email: email,
             name: name,
             weight: weight,

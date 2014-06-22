@@ -1,5 +1,6 @@
 /*jslint node: true*/
 /*global io*/
+/*jslint plusplus: true */
 "use strict";
 var express = require("express"),
     app = express(),
@@ -49,23 +50,79 @@ app.use(errorHandler({
     showStack: true
 }));
 
+function checkNumeric(value) {
+    var check = value.split(''),
+        isValid,
+        i;
+    if (value !== "") {
+        for (i = 0; i < value.length; i++) {
+            if (isValid === false) { break; }
+            if (parseFloat(check[i]) || check[i] === '0') {
+                isValid = true;
+            } else {
+                isValid = false;
+            }
+        }
+        return isValid;
+    } else {
+        return false;
+    }
+}
+
+function verifyRegistry(data) {
+    var username = data.username,
+        password = data.password,
+        confpass = data.confpass,
+        email = data.email,
+        name = data.name,
+        weight = data.weight,
+        height = data.height,
+        age = data.age,
+        atpos = email.indexOf("@"),
+        dotpos = email.lastIndexOf(".");
+    
+    db.serialize(function () {
+        db.all("SELECT * FROM USERS WHERE user = ? LIMIT 1", username, function (err, rows) {
+            if (rows[0]) {
+                return false;
+            }
+        });
+    });
+    
+    if (confpass === "" || confpass !== password) {
+        return false;
+    } else if (email !== "") {
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+            return false;
+        }
+    }
+    if (email === "") {
+        return false;
+    } else if (name === "" || name.length < 1) {
+        return false;
+    } else if (checkNumeric(weight) && checkNumeric(height) && checkNumeric(age)) {
+        return true;
+    }
+}
+
 io.sockets.on('connection', function (socket) {
     
     socket.on('register', function (data) {
-        var username = data.username,
-            password = data.password,
-            email = data.email,
-            name = data.name,
-            weight = data.weight,
-            height = data.height,
-            age = data.age;
-        
-        db.serialize(function () {
-            var stmt = db.prepare("INSERT INTO USERS (user, password, email, name, weight, height, age) VALUES (?,?,?,?,?,?,?)");
-            stmt.run(username, password, email, name, weight, height, age);
-            stmt.finalize();
-        });
-        db.close();
+        if (verifyRegistry(data)) {
+            var username = data.username,
+                password = data.password,
+                email = data.email,
+                name = data.name,
+                weight = data.weight,
+                height = data.height,
+                age = data.age;
+
+            db.serialize(function () {
+                var stmt = db.prepare("INSERT INTO USERS (user, password, email, name, weight, height, age) VALUES (?,?,?,?,?,?,?)");
+                stmt.run(username, password, email, name, weight, height, age);
+                stmt.finalize();
+            });
+        }
     });
     
     socket.on('login', function (data) {
@@ -87,3 +144,8 @@ io.sockets.on('connection', function (socket) {
         });
     });
 });
+
+
+
+
+
