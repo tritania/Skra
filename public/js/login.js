@@ -22,6 +22,9 @@ socket.on("loginevent", function (data) {
     if (data) {
         //logged in
     } else {
-        //not logged in create d3 fade event
+        d3.select("#ilogin").style("visibility", "visible");
+        d3.select("#ilogin").transition()
+            .duration(500)
+            .style("opacity", 1);
     }
 });

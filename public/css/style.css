@@ -150,3 +150,24 @@ body
     margin-left: auto;
     margin-right: auto
 }
+#ilogin {
+    padding: 3px;
+    padding-top: 3px;
+    padding-right: 5px;
+    background-color: silver;
+    position: absolute;
+    width: 110px;
+    z-index: 7;
+    margin: 0 auto;
+    margin-top: 5px;
+    visibility: hidden;
+    border:1px solid;
+    border-color: #83939b;
+    border-radius: 10px;
+    right:50px;
+    top:40px;
+}
+
+#iloginp {
+    color: red;
+}
