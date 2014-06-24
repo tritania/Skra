@@ -25,7 +25,7 @@ body
     position: absolute;
 }
 
-.content
+#content
 {
     margin-top: 60px;
     position: relative;

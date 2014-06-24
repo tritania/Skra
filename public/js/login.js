@@ -1,6 +1,6 @@
 /*jslint browser: true*/
 /*jslint plusplus: true */
-/*global d3, console,io*/
+/*global d3, c3, console,io*/
 var socket = io.connect("skra.org:443");
 
 function login() {
@@ -19,6 +19,8 @@ function login() {
 
 socket.on("loginevent", function (data) {
     "use strict";
+    var cheight = Math.ceil(document.getElementById("content").clientHeight / 1.45),
+        chart;
     if (data.valid) {
         d3.select("#register").remove();
         d3.select("#login").remove();
@@ -26,8 +28,11 @@ socket.on("loginevent", function (data) {
         d3.select("#passwordform").remove();
         d3.select("#logo").remove();
         
-        var chart = c3.generate({
-            bindto: '.content',
+        chart = c3.generate({
+            bindto: '#content',
+            size: {
+                height: cheight
+            },
             data: {
                 columns: [
                     ['data1', 30, 200, 100, 800, 150, 250],
@@ -35,6 +40,7 @@ socket.on("loginevent", function (data) {
                 ]
             }
         });
+        console.log(cheight);
         
     } else {
         document.getElementById("username").value  = "";
