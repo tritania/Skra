@@ -138,7 +138,9 @@ io.sockets.on('connection', function (socket) {
                 if (rows[0]) {
                     bcrypt.compare(password, rows[0].password, function (err, res) {
                         if (res) {
-                            login = true;
+                            login = {
+                                valid: true
+                            };
                             socket.emit("loginevent", login);
                         } else {
                             login = false;

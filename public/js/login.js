@@ -19,12 +19,23 @@ function login() {
 
 socket.on("loginevent", function (data) {
     "use strict";
-    if (data) {
+    if (data.valid) {
         d3.select("#register").remove();
         d3.select("#login").remove();
         d3.select("#userform").remove();
         d3.select("#passwordform").remove();
         d3.select("#logo").remove();
+        
+        var chart = c3.generate({
+            bindto: '.content',
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 800, 150, 250],
+                    ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+            }
+        });
+        
     } else {
         document.getElementById("username").value  = "";
         document.getElementById("password").value  = "";
