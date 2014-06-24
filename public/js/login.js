@@ -24,6 +24,7 @@ socket.on("loginevent", function (data) {
         d3.select("#login").remove();
         d3.select("#userform").remove();
         d3.select("#passwordform").remove();
+        d3.select("#logo").remove();
     } else {
         document.getElementById("username").value  = "";
         document.getElementById("password").value  = "";
