@@ -20,7 +20,10 @@ function login() {
 socket.on("loginevent", function (data) {
     "use strict";
     if (data) {
-        //logged in
+        d3.select("#register").remove();
+        d3.select("#login").remove();
+        d3.select("#userform").remove();
+        d3.select("#passwordform").remove();
     } else {
         document.getElementById("username").value  = "";
         document.getElementById("password").value  = "";
