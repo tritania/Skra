@@ -8,6 +8,7 @@ body
     font-family:arial;color:black;font-size:15px;
     background-color: #F3F3F3;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container
@@ -170,4 +171,29 @@ body
 
 #iloginp {
     color: red;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(149, 165, 165);
+}
+
+#footerlogo {
+    float: left;
+    width: 30px;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-right: 0;
+}
+
+.footertext {
+    float: left;
+    font-family:arial;color:black;font-size:20px;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-right: 0;
 }
