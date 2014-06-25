@@ -19,7 +19,9 @@ function login() {
 
 socket.on("loginevent", function (data) {
     "use strict";
-    var cheight = Math.ceil(document.getElementById("content").clientHeight / 1.45),
+    var cheight = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight,
         chart;
     if (data.valid) {
         d3.select("#register").remove();
@@ -31,7 +33,7 @@ socket.on("loginevent", function (data) {
         chart = c3.generate({
             bindto: '#content',
             size: {
-                height: cheight
+                height: Math.ceil(cheight / 2)
             },
             data: {
                 columns: [
