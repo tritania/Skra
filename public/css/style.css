@@ -215,6 +215,9 @@ body
 }
 
 .copyright {
+    font-family:"Helvetica Neue", sans-serif;color:black;font-size:15px;
+    padding: 5px;
+    text-align:center;
     position: relative;
     z-index: 20;
     margin: 0 auto;
