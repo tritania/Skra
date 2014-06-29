@@ -214,6 +214,11 @@ body
     margin-right: 5px;
 }
 
+.terms,
+.privacy,
+.creative,
+.contact,
+.faq,
 .copyright {
     font-family:"Helvetica Neue", sans-serif;color:black;font-size:15px;
     padding: 5px;
@@ -223,7 +228,7 @@ body
     margin: 0 auto;
     background-color: silver;
     width: 500px;
-    margin-top: -200px;
+    margin-top: -260px;
     visibility: hidden;
     border:2px solid;
     border-radius:25px;
