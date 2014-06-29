@@ -11,8 +11,3 @@ function dismissFooterElement(element) {
     d3.select(element).style("visibility", "hidden");
     d3.select(".prc").attr("id", "nonactive");
 }
-
-function footerColor(element) {
-    "use strict";
-    d3.select(element).style("color", "blue");
-}
