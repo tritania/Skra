@@ -13,6 +13,7 @@ var express = require("express"),
     bcrypt = require('bcrypt-nodejs'),
     sqlite3 = require('sqlite3').verbose(),
     port = 443,
+    users = [],
     
     options = {
         key: fs.readFileSync('keys/skra.key'),
@@ -142,6 +143,7 @@ io.sockets.on('connection', function (socket) {
                                 valid: true
                             };
                             socket.emit("loginevent", login);
+                            users[socket.id] = username;
                         } else {
                             login = false;
                             socket.emit("loginevent", login);
@@ -169,6 +171,11 @@ io.sockets.on('connection', function (socket) {
                 socket.emit("userChecked", valid);
             });
         });
+    });
+    
+    socket.on('disconnect', function () {
+        var pos = users.indexOf(socket.id);
+        users.splice(pos, pos - 1);
     });
 });
 
