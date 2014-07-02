@@ -209,6 +209,7 @@ body
 }
 
 .footerlink {
+    cursor: pointer;
     float: right;
     font-family:Orbitron;color:black;font-size:14px;
     margin-left: 5px;
