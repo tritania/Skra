@@ -24,7 +24,8 @@ socket.on("loginevent", function (data) {
                 || document.body.clientHeight,
         chart;
     if (data.valid) {
-        d3.select("#register").remove();
+        document.getElementById("trans1").innerHTML  = "Logout";
+        d3.select("#register").attr("onclick", "logout()");
         d3.select("#login").remove();
         d3.select("#userform").remove();
         d3.select("#passwordform").remove();
