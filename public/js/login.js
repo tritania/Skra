@@ -17,6 +17,10 @@ function login() {
     
 }
 
+function logout() {
+    "use strict";
+}
+
 socket.on("loginevent", function (data) {
     "use strict";
     var cheight = window.innerHeight
@@ -40,10 +44,17 @@ socket.on("loginevent", function (data) {
                 columns: [
                     ['data1', 30, 200, 100, 800, 150, 250],
                     ['data2', 50, 20, 10, 40, 15, 25]
-                ]
+                ],
+                type: 'spline'
             }
         });
-        console.log(cheight);
+        d3.select("#content").append("div")
+            .attr("class", "gb")
+            .attr("id", "sugars");
+        d3.select(".gb").append("p")
+            .attr("class", "gbt")
+            .text("Blood Sugars");
+            
         
     } else {
         document.getElementById("username").value  = "";

@@ -144,6 +144,7 @@ io.sockets.on('connection', function (socket) {
                             };
                             socket.emit("loginevent", login);
                             users[socket.id] = username;
+                            console.log("User " + username + " connected with id " + socket.id);
                         } else {
                             login = false;
                             socket.emit("loginevent", login);
@@ -175,6 +176,7 @@ io.sockets.on('connection', function (socket) {
     
     socket.on('disconnect', function () {
         var pos = users.indexOf(socket.id);
+        console.log("User " + users[socket.id] + " disconnected with id " + socket.id);
         users.splice(pos, pos - 1);
     });
 });
