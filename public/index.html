@@ -10,70 +10,20 @@
         <script type="text/javascript" src="js/register.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="css/c3.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Volkhov|Lora:400,700|Lato:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body id="body">
         <div class="container">
             <div class="menu-wrapper">
                 <div class="menu">
-                    <div id="register" onclick="signup()"> <p id="trans1" class="buttontext">Sign Up</p> </div>
-                    <div id="login" onclick="login()"> <p class="buttontext" >Login</p> </div>
-                    <input id="password" class="input" type="password" placeholder="Password" tabindex=2 onkeydown="if (event.keyCode == 13) document.getElementById('login').click()">
-                    <input id="username" class="input" type="text" placeholder="Username" tabindex=1>
+                    <div id="register" onclick="signup()"> <p id="trans1" class="buttontext">REGISTER</p> </div>
+                    <div id="login" onclick="login()"> <p class="buttontext" >LOGIN</p> </div>
                 </div>
             </div>
 
             <div id="content">
                 <img src="img/skraname.svg" alt="SKRA" id="logo" class="prelog">
             </div>
-            <div class="footer">
-                <div id="footerlogo">
-                    <svg width="25" height="25">
-                        <image xlink:href="img/skra.svg" width="25" height="25"/>
-                    </svg>
-                </div>
-                <p class="footertext">SKRA</p>
-                &nbsp;&nbsp;&nbsp;
-                <p class="footerlink" onclick="showFooterElement('.terms')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Terms</p>
-                <p class="footerlink" onclick="showFooterElement('.privacy')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Privacy</p>
-                <p class="footerlink" onclick="showFooterElement('.creative')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Creative Rights</p>
-                <p class="footerlink" onclick="showFooterElement('.contact')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Contact Us</p>
-                <p class="footerlink" onclick="showFooterElement('.faq')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">FAQ</p>
-                <p class="footerlink" onclick="showFooterElement('.copyright')" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Copyright</p>
-            </div>
-        </div>
-        <div class="registerdiv">
-            <h2>Create an account and start using skra today, for free!</h2>
-            <p id="regdes">Skra is a multifunction diabetic tracking program which allows users to log everything from their bloodsugar to when they exercise</p>
-            <input id="user" type="text" class="regi" placeholder="Username" onblur="checkUser()"><br>
-            <br>
-            <input id="pass" type="password" class="regi" placeholder="Password" onblur="checkPassword()">
-            <input id="confpass" type="password" class="regi" placeholder="Confirm Password" onblur="checkPassword()"><br>
-            <br>
-            <input id="email" type="email" class="regi" placeholder="Email" onblur="checkEmail()"><br>
-            <br>
-            <input id="name" type="text" class="regi" placeholder="Name" onblur="checkName()"><br>
-            <br>
-            <input id="weight" type="text" class="regi" placeholder="Weight (Kg)" onblur="checkNumeric('weight', 4)"><br>
-            <br>
-            <input id="height" type="text" class="regi" placeholder="Height (cm)" onblur="checkNumeric('height', 5)"><br>
-            <br>
-            <input id="age" type="text" class="regi" placeholder="Age" onblur="checkNumeric('age', 6)"><br>
-            <br>
-            <div class="rmb" onclick="register()">
-                 <p class="buttontext">Submit</p>
-            </div>
-            <div class="rmb" onclick="closereg()">
-                <p class="buttontext">Cancel</p>
-            </div>
-            <br>
-        </div>
-        <div class="copyright" onclick="dismissFooterElement('.copyright')">
-            <h2>Copyright</h2>
-            <p>asd</p>
-            <p>Click anywhere on the rectangle to dismiss me!</p>
-        </div>
-        <div id="ilogin">
-            <p id="iloginp">Incorrect Login</p>
         </div>
     </body>
 </html>
