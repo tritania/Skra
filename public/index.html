@@ -12,22 +12,16 @@
         <link href="css/c3.css" rel="stylesheet" type="text/css">
     </head>
     <body id="body">
-        <div class="prc"></div>
         <div class="container">
-            <div class="menu">
-                <div id="register" onclick="signup()">
-                    <p id="trans1" class="buttontext">Sign Up</p>
-                </div>
-                <div id="login" onclick="login()">
-                    <p class="buttontext" >Login</p>
-                </div>                    
-                <div id="userform">
+            <div class="menu-wrapper">
+                <div class="menu">
+                    <div id="register" onclick="signup()"> <p id="trans1" class="buttontext">Sign Up</p> </div>
+                    <div id="login" onclick="login()"> <p class="buttontext" >Login</p> </div>
                     <input id="password" class="input" type="password" placeholder="Password" tabindex=2 onkeydown="if (event.keyCode == 13) document.getElementById('login').click()">
-                </div>
-                <div id="passwordform">
                     <input id="username" class="input" type="text" placeholder="Username" tabindex=1>
                 </div>
             </div>
+
             <div id="content">
                 <img src="img/skraname.svg" alt="SKRA" id="logo" class="prelog">
             </div>

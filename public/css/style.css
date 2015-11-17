@@ -1,13 +1,14 @@
 @font-face {
     font-family: "Karnivor";
     src: url('../fonts/KARNIVOR.ttf') format('truetype');
-}@font-face {
+}
+@font-face {
     font-family: "Orbitron";
     src: url('../fonts/Orbitron-Regular.ttf') format('truetype');
 }
 
 html,
-body 
+body
 {
     height: 100%;
     width: 100%;
@@ -21,18 +22,54 @@ body
 
 .container
 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0; padding: 0;
 }
 
-.menu 
+.menu-wrapper
 {
+  width: 100%;
+  display: table;
+  vertical-align: middle;
+}
+
+.menu
+{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
     height: 35px;
+    margin: 0;
     width: 100%;
     background-color: rgb(149, 165, 165);
-    position: absolute;
+}
+
+.input
+{
+    float: right;
+    padding-left: 15px;
+    margin-right: 15px;
+    border-color: transparent;
+    outline-color: rgb(149, 165, 165);
+    background-color: white;
+    height: 20px;
+
+    -moz-border-radius-topright: 30px;
+    -webkit-border-top-right-radius: 30px;
+    border-top-right-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    -moz-border-radius-topleft: 30px;
+    -webkit-border-top-left-radius: 30px;
+    border-top-left-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 #content
@@ -87,26 +124,7 @@ body
     outline-color: silver;
 }
 
-.input
-{
-    border-color: transparent;
-    padding-left: 15px;
-    padding-right: 15px;
-    float: right;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 15px;
-    height: 20px;
-    width: 150px;
-    outline-color: rgb(149, 165, 165);
-    background-color: white;
-    -moz-border-radius-topright: 30px;
-    -webkit-border-top-right-radius: 30px;
-    border-top-right-radius: 30px;
-    -moz-border-radius-bottomleft: 30px;
-    -webkit-border-bottom-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
+
 
 .rmb
 {
@@ -126,23 +144,28 @@ body
     background-color: rgb(114, 169, 217);
 }
 
-#login, 
+#login,
 #register
 {
-    float: right;
     height: 25px;
     width: 75px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 15px;
+    float: right;
     text-decoration: none;
     cursor: pointer;
+    margin-right: 15px;
     -moz-border-radius-topright: 30px;
     -webkit-border-top-right-radius: 30px;
     border-top-right-radius: 30px;
     -moz-border-radius-bottomleft: 30px;
     -webkit-border-bottom-left-radius: 30px;
     border-bottom-left-radius: 30px;
+
+    -moz-border-radius-topleft: 30px;
+    -webkit-border-top-left-radius: 30px;
+    border-top-left-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px;
     background-color: rgb(114, 169, 217);
 }
 
