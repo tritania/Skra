@@ -12,16 +12,16 @@ var express = require("express"),
     http = require('http'),
     bcrypt = require('bcrypt-nodejs'),
     sqlite3 = require('sqlite3').verbose(),
-    port = 443,
+    port = 4430,
     users = [],
-    
-    options = {
-        key: fs.readFileSync('keys/skra.key'),
-        cert: fs.readFileSync('keys/skra_org.crt'),
-        ca: [fs.readFileSync('keys/AddTrustExternalCARoot.crt'), fs.readFileSync('keys/COMODORSAAddTrustCA.crt'),  fs.readFileSync('keys/COMODORSADomainValidationSecureServerCA.crt')]
-    },
-    
-    server = https.createServer(options, app).listen(port, 'skra.org', function () {
+
+  //  options = {
+  //      key: fs.readFileSync('keys/skra.key'),
+  //      cert: fs.readFileSync('keys/skra_org.crt'),
+  //      ca: [fs.readFileSync('keys/AddTrustExternalCARoot.crt'), fs.readFileSync('keys/COMODORSAAddTrustCA.crt'),  fs.readFileSync('keys/COMODORSADomainValidationSecureServerCA.crt')]
+  //  },
+
+    server = http.createServer(app).listen(port, 'localhost', function () { // (options, app)
         console.log("Express server listening on port " + port);
     });
 
@@ -32,11 +32,11 @@ var httpApp = express();
 var httpRouter = express.Router();
 httpApp.use('*', httpRouter);
 httpRouter.get('*', function (req, res) {
-    var destination = 'https://skra.org:443';
+    var destination = 'https://localhost:4430';
     return res.redirect(destination);
 });
 var httpServer = http.createServer(httpApp);
-httpServer.listen(80, 'skra.org');
+httpServer.listen(8000, 'localhost');
 
 //database setup if not already there
 var db = new sqlite3.Database('public/data/data.db');
@@ -44,7 +44,10 @@ db.run("create table if not exists USERS (userid INTEGER PRIMARY KEY, user TEXT,
 
 
 app.use(methodOverride());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(errorHandler({
     dumpExceptions: true,
@@ -81,7 +84,7 @@ function verifyRegistry(data) {
         age = data.age,
         atpos = email.indexOf("@"),
         dotpos = email.lastIndexOf(".");
-    
+
     db.serialize(function () {
         db.all("SELECT * FROM USERS WHERE user = ? LIMIT 1", username, function (err, rows) {
             if (rows[0]) {
@@ -89,7 +92,7 @@ function verifyRegistry(data) {
             }
         });
     });
-    
+
     if (confpass === "" || confpass !== password) {
         return false;
     } else if (email !== "") {
@@ -107,7 +110,7 @@ function verifyRegistry(data) {
 }
 
 io.sockets.on('connection', function (socket) {
-    
+
     socket.on('register', function (data) {
         if (verifyRegistry(data)) {
             var username = data.username,
@@ -129,7 +132,7 @@ io.sockets.on('connection', function (socket) {
             socket.emit("wronglyreg", send);
         }
     });
-    
+
     socket.on('login', function (data) {
         var username = data.username,
             password = data.password,
@@ -154,11 +157,11 @@ io.sockets.on('connection', function (socket) {
                     login = false;
                     socket.emit("loginevent", login);
                 }
-               
+
             });
         });
     });
-    
+
     socket.on('usercheck', function (data) {
         var username = data.username,
             valid;
@@ -173,7 +176,7 @@ io.sockets.on('connection', function (socket) {
             });
         });
     });
-    
+
     socket.on('disconnect', function () {
         var pos = users.indexOf(socket.id);
         console.log("User " + users[socket.id] + " disconnected with id " + socket.id);
