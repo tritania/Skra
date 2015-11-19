@@ -41,7 +41,7 @@ body
     position: relative;
     display: table-cell;
     vertical-align: middle;
-    height: 35px;
+    height: 60px;
     margin: 0;
     width: 100%;
     background-color: #3a5063;
@@ -54,21 +54,41 @@ body
     width: 100%;
 }
 
+
 #login,
 #register
 {
+    margin-top: 10px;
+    display: inline-block;
     width: 75px;
     float: right;
+    text-decoration:none;
+    cursor: pointer; 
+    margin-right: 40px;
+    background-color: #3a5063;
+}
+
+#motto
+{
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
     text-decoration: none;
     cursor: pointer;
-    margin-right: 15px;
-
     background-color: #3a5063;
+}
+
+.fight
+{
+    font-family:"cinzel", sans-serif;color:white;font-size:30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align:center;
 }
 
 .buttontext
 {
-    font-family:"Lato", sans-serif;color:white;font-size:15px;
+    font-family:"alpha slab one", sans-serif;color:white;font-size:15px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align:center;
@@ -79,4 +99,86 @@ body
     display: block;
     margin-left: auto;
     margin-right: auto
+}
+
+#entry
+{
+    visibility: hidden;
+    background-color: rgba(6, 63, 119, 0.99);
+    position: absolute;
+    top: 18%;
+    margin-left: 22%;
+    z-index: 4;
+    width: 56%;
+    height: 45%;
+    text-align:left;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-colour:black;
+}
+input
+{
+    margin-left: 1%; 
+    font-size: 15px;
+    margin-bottom:25px;
+}
+
+label 
+{
+    display: inline-block;
+    width: 150px;
+    margin-left: 10%;
+    font-family: "alpha slab one", sans-serif;color:white;font-size:15px;
+}
+h3 {
+        
+    font-family: "alpha slab one", serif; color:aliceblue;
+    font-size:35px;
+    margin-left: 10%;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+p  {
+    font-family: "source sans pro", sans-serif; color:aliceblue;
+    font-size:20px;
+    margin-left: 14%;
+    margin-top: 0px;
+}
+#entry-ck-box {
+    margin-left:10%;
+}
+
+#accountcreation {
+    width: 50%;
+    margin-top:15px;
+    float: left;
+
+}
+
+#loginscreen {
+    position:relative;
+    float: right;
+    width: 50%;
+    margin-top:100px;
+}
+
+.buttontext123 {
+    font-family:"cinzel", sans-serif;color:white;font-size:30px;
+    margin-left:0 auto; 
+}
+
+#jointheclan {
+    margin: 0 auto;
+    width: 250px;
+}
+
+.buttontext321 {
+     font-family:"cinzel", sans-serif;color:white;font-size:30px;
+    margin-left:0px;
+}
+
+#logintowonderland {
+    margin: 0 auto;
+    width: 250px;
 }
