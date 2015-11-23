@@ -2,9 +2,7 @@
     <head>
         <title>SKRA</title>
         <link rel="shortcut icon" href="img/favicon.ico" >
-        <script type="text/javascript" src="js/socket.io.js"></script>
-        <script type="text/javascript" src="js/login.js"></script>
-        <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/skra.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Volkhov|Lora:400,700|Lato:400,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Cinzel:400,900|Alfa+Slab+One|Inknut+Antiqua:400,900|Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
@@ -13,9 +11,9 @@
         <div class="container">
             <div class="menu-wrapper">
                 <div class="menu">
-                    <div id="register" onclick="signup()"> <p class="buttontext">REGISTER</p> </div>
-                    <div id="login" onclick="login()"> <p class="buttontext" >LOGIN</p> </div>
-                    <div id="motto" onclick="login()"> <p class="fight" >FIND YOUR FIGHT</p> </div>
+                    <div id="register" onclick="loginform()"> <p class="buttontext">REGISTER</p> </div>
+                    <div id="login" onclick="loginform()"> <p class="buttontext" >LOGIN</p> </div>
+                    <div id="motto" onclick="loginform()"> <p class="fight" >FIND YOUR FIGHT</p> </div>
                 </div>
             </div>
 
@@ -24,8 +22,9 @@
             </div>
 
             <div id="entry">
+                <h2 class="quit" onclick="closeform()">'</h2>
+                <p id="welcome"> Welcome to the new you, welcome to Skra.</p>
                 <div id="accountcreation">
-                <p>Welcome to the new you, welcome to Skra.</p>
                 <label for="Username">Username</label> 
                 <input type="text"><br>
                 <label for="email">Email</label> 
@@ -34,13 +33,19 @@
                 <input type="password"> <br>
                 <label for="age">Age</label>
                 <input type="number" min=18><br> 
-                <label for="height">Height (inches)</label>
-                <input type="number"><br>
+                <label for="height">Height</label>
+                <input type="number">
+                    <select>
+                        <option value=" "></option>
+                        <option value="cm">in</option>
+                        <option value="in">cm</option>
+                    </select>
+                <br> 
                 <label for="weight">Weight (lbs)</label>
                 <input type="number"><br>
                 <input type="checkbox" id="entry-ck-box">
                 <label for="terms and conditions">Do you agree to the terms and conditions?</label><br>
-                    <div id="jointheclan" onclick="signup()"> <p class="buttontext123">Register</p> </div>
+                    <div id="jointheclan" onclick="signup()"> <p class="buttontext1">Register</p> </div>
             </div>
             <div id="loginscreen">
                 <p>Already a member? Sign in below!</p>
@@ -48,7 +53,7 @@
                 <input type="text"><br>
                 <label for="password">Password</label> 
                 <input type="password"><br>
-                <div id="logintowonderland" onclick="login()"> <p class="buttontext123" >Sign In</p> </div>
+                <div id="logintowonderland" onclick="login()"> <p class="buttontext1" >Sign In</p> </div>
             
             </div>
 

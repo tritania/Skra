@@ -6,6 +6,10 @@
     font-family: "Orbitron";
     src: url('../fonts/Orbitron-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: "WebIcons";
+    src: url('../fonts/WebSymbols-Regular.otf') format('opentype');
+}
 
 html,
 body
@@ -15,9 +19,19 @@ body
     padding: 0;
     margin: 0;
     font-family:arial;color:black;font-size:15px;
-    background-color: #4796df;
+    background-color: #daddd2;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.quit {
+    position: absolute;
+    font-family:"WebIcons", serif;color:white;font-size:20px;
+    z-index: 5;
+    margin: 10px;
+    top: 0%;
+    right: 0%;
+    cursor: pointer; 
 }
 
 .container
@@ -58,7 +72,7 @@ body
 #login,
 #register
 {
-    margin-top: 10px;
+    margin-top: 5px;
     display: inline-block;
     width: 75px;
     float: right;
@@ -88,7 +102,7 @@ body
 
 .buttontext
 {
-    font-family:"alpha slab one", sans-serif;color:white;font-size:15px;
+    font-family:"source sans pro", sans-serif;color:white;font-size:20px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align:center;
@@ -103,14 +117,14 @@ body
 
 #entry
 {
-    visibility: hidden;
-    background-color: rgba(6, 63, 119, 0.99);
+    visibility:hidden;
+    background-color: #3a5063;
     position: absolute;
     top: 18%;
     margin-left: 22%;
     z-index: 4;
     width: 56%;
-    height: 45%;
+    height: 500px;
     text-align:left;
     outline-style: solid;
     outline-width: 2px;
@@ -128,8 +142,9 @@ label
     display: inline-block;
     width: 150px;
     margin-left: 10%;
-    font-family: "alpha slab one", sans-serif;color:white;font-size:15px;
+    font-family:"source sans pro", sans-serif;color:white;font-size:16px;
 }
+
 h3 {
         
     font-family: "alpha slab one", serif; color:aliceblue;
@@ -145,6 +160,7 @@ p  {
     margin-left: 14%;
     margin-top: 0px;
 }
+
 #entry-ck-box {
     margin-left:10%;
 }
@@ -153,7 +169,6 @@ p  {
     width: 50%;
     margin-top:15px;
     float: left;
-
 }
 
 #loginscreen {
@@ -163,22 +178,23 @@ p  {
     margin-top:100px;
 }
 
-.buttontext123 {
+.buttontext1 {
     font-family:"cinzel", sans-serif;color:white;font-size:30px;
-    margin-left:0 auto; 
-}
-
-#jointheclan {
     margin: 0 auto;
-    width: 250px;
 }
 
-.buttontext321 {
-     font-family:"cinzel", sans-serif;color:white;font-size:30px;
-    margin-left:0px;
-}
-
+#jointheclan,
 #logintowonderland {
     margin: 0 auto;
+    margin-left: 20%;
     width: 250px;
+    text-align: center;
+    background-color: #4b6983;
+}
+
+#welcome {
+    margin-left:0;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
 }
